@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@300&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: "Poppins",'Montserrat','Tahoma', 'Verdana', sans-serif;
+    color: rgb(20, 20, 20);
+    
+    box-sizing:border-box;
+    cursor:auto;
+}
+#header{
+    display: flex;
+    
+    padding: 1rem;
+    margin: 0;
+    width: auto;
+    height: 3.5rem;
+    font-family: 'Poppins';
+    font-weight: 800;
+    font-size: 1rem;
+    position: relative;
+}
+body{
+    width: auto;
+    background-color: #ffffff;
+}
+
+
+.other{
+    margin-top: 10px;
+}
+.other p{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+
+}
+.google{
+    margin-top: 10px;
+    cursor: pointer;
+}
+.menu{
+    position: absolute;
+    right: 1.5rem;
+    font-weight: 100;
+    font-size: 14px;
+    contain: content;
+    width:20rem;
+    height:2rem;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    
+}
+
+.menu li{
+    display: inline-grid;
+    grid-column: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    margin:1px;
+    cursor: pointer;
+}
+.menu ul{
+    width: 100%;
+    background-color: rgba(246, 210, 50, 0.3);
+
+    height: 1.5rem;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    
+    
+  
+    text-align: center;
+}
+#status{
+    position: absolute;
+    left: 2rem;
+    top: 3rem;
+    height: 17rem;
+    width: 15rem;
+    background-color: rgb(251, 234, 161);
+    border-radius: 30px;
+    flex-basis: 30%;
+}
+#container{
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    width: auto;
+    height: 90vh;
+    
+}
+#status h3{
+    text-align: center;
+    padding: 10px;
+    
+}
+#status .subitems{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    
+}
+#status ul{
+    margin: auto;
+    list-style-type: none;
+    padding: 20px 0 20px 0;
+    
+    flex-direction: column;
+    
+    
+    
+}
+#status li{
+    display: flex;
+}
+
+.circle{
+    font-size: 0.6rem;
+    margin-left: 1.2rem;
+    
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    
+    font-weight: 900;
+    font-family: 'Poppins';
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.subitems.circle:hover{
+    background-color: crimson;
+    color: #ffffff;
+
+}
+.subitems a{
+    text-decoration: none;
+    
+    height: 3px;
+    
+    
+}
+.subitems{
+    position:relative;
+}
+
+hr{
+    background-color: rgb(253, 213, 144);
+    height: 2px;
+    border: 0;
+}
+.middle-02{
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+    border-radius: 15px;
+    width: 58rem;
+    height: 30rem;
+    flex-basis: 70%;
+    background-color: rgb(249, 242, 233);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.middle-02 h3{
+    font-weight:700;
+    text-align: center;
+    padding: 15px;
+
+}
+.middle-02 p{
+    font-size: 15px;
+    text-align: center;
+    text-overflow: inherit;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+.middle-inner-rows{
+    --row-counts:3;
+    display: grid;
+    grid-row: auto;
+    
+    grid-template-rows: repeat(var(--row-counts),auto-fit);
+    grid-row: 6;
+    padding-top: 15px;
+    padding-bottom: 4px;
+    text-align: left;
+    justify-items: center;
+    
+}
+.inner-rows-1{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    padding-left: 4rem;
+    width: 58rem;
+}
+.inner-rows-1:hover{
+    background-color: rgb(255, 255, 255,0.4);
+}
+.middle-inner-rows hr{
+    height: 0.7px;
+}
+.middle-inner-rows p{
+    
+    word-break:break-all;
+    font-size: 11px;
+    text-align: left;
+    width: 93%;
+    
+}
+.middle-inner-rows hr{
+    width: 90%;
+    
+}
+.middle-inner-rows h5{
+    display: inline-flex;
+    
+    align-items: center;
+}
+.time-01{
+    font-size: 10px;
+    position: absolute;
+    right: 3rem;
+}
+

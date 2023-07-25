@@ -1,0 +1,107 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@100;300;400&display=swap');
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* nav bar */
+
+.navbar{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: black;
+  font-size: 12px;
+  line-height: 17px;
+  text-transform: uppercase;
+  box-shadow: 0px 8px 6px -6px gray;
+  --webkit-box-shadow:0px 8px 6px -6px gray;
+  border-bottom:0.5px solid gray !important;
+}
+
+.nav-link{
+  font-weight: 400 !important;
+}
+
+.active{
+  border-bottom: 2px solid black;
+}
+.nav-item{
+  margin-right: 30px;
+ 
+  
+}
+.navbar-brand{
+  font-weight: 300;
+  font-size: 16px;
+  padding: 5px;
+  font-family: 'Poppins';
+  letter-spacing: 3px;
+}
+.icon{
+  font-size: 25px;
+  margin-right: 8px;
+  padding: 0 0 0 0;
+}
+.nav-item a:hover{
+  color: #160f1c;
+}
+
+
+                    /* Footer css*/
+
+.footer-box{
+  background-color: rgb(111, 16, 200);
+}
+.footer-menu{
+  color: aliceblue;
+  text-decoration: none;
+}
+.footer-box a{
+  color: rgb(250, 250, 251);
+  margin-right: 15px;
+}
+.footer-box a:hover{
+  color: #160f1c;
+}
+
+nav-link:hover{
+  color:rgb(25, 15, 35)
+}
+
+
+/* Register page */
+
+.container-box{
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92vh;
+  
+  flex-direction: column;
+  
+}
+.btn-primary{
+  margin: auto auto;
+  width: 7rem;
+  
+  justify-content: center;
+  position: relative;
+  left: 25%;
+  bottom: 2%;
+  /* Center horizontally*/
+  
+}
+
+.align-item-center{
+  align-items: center;
+}
+
+

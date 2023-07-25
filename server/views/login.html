@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>V-lab</title>
+</head>
+<body>
+    <div id="header">
+        V-lab Solutions
+    </div>
+    <p name="result"></p>
+    <div id="authentication">
+        <div class="auth-1">
+            
+            <h2>Log in</h2>
+            <div class="login">
+            <form action="/login" method="post">
+            <input type="text" name="id" id="name" placeholder="Enter your roll number"> <br>
+            <input type="password" name="password" id="pwd" placeholder="Enter your password"> <br>
+            <input type="submit" value="Authenticate" id="submit">
+            </form>
+            </div>
+            <div class="other">
+            <p>or</p>
+            <img width="35" height="35" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" class="google"/>
+            </div>
+        </div>
+
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
