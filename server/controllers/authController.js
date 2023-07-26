@@ -65,26 +65,31 @@ export const loginController=async (req,res)=>{
                 
             });
         }
-        const userid=await userModel.findOne({id});
-        if(!userid){
+        const user=await userModel.findOne({id});
+        if(!user){
             return res.status(404).send({
                 success:false,
                 message:"User is not registered",
             })
         }
-        const match =await comparePassword(password,userid.password);
+        const match =await comparePassword(password,user.password);
         if(!match){
             return res.status(404).send({
                 success:false,
                 message:"Invalid password",
             })
         }
-        const token=await JWT.sign({_id:userid._id},process.env.JWT_KEY,{expiresIn:"7d"});
+        const token=await JWT.sign({_id:user._id},process.env.JWT_KEY,{expiresIn:"7d"});
         res.status(200).send({
             success:true,
             message:'Logged in successfully.',
             user:{
-                id:userid.id,
+                id:user.id,
+                name:user.name,
+                email:user.email,
+                role:user.role,
+                
+
             },token
 
             

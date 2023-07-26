@@ -1,6 +1,6 @@
 import express from 'express';
 import {registerController,loginController,testController} from '../controllers/authController.js';
-import { RequireSignIn } from '../middleware/authMiddleware.js';
+import { RequireSignIn, isAdmin} from '../middleware/authMiddleware.js';
 
 
 //router object
@@ -22,6 +22,10 @@ router.post('/test',RequireSignIn,testController);
 //protected route
 
 router.get('/user-auth',RequireSignIn,(req,res)=>{
+    res.status(200).send({ok:true});
+})
+
+router.get('/admin-auth',RequireSignIn,isAdmin,(req,res)=>{
     res.status(200).send({ok:true});
 })
 

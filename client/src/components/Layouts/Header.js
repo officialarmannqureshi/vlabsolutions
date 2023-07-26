@@ -76,15 +76,38 @@ const Header = () => {
           })} >Register</NavLink>
         </li></>):(
         <>
-        <li className="nav-item">
-          <NavLink to="/login" 
-          onClick={handleLogout}
-          className="nav-link"
-          style={({isActive})=>({
-            color:isActive ? 'black':'gray',
-            textDecoration: 'none',
-          
-          })} >Logout</NavLink></li>
+        <li className="nav-item dropdown">
+                    <NavLink
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      style={{ border: "none" }}
+                    >
+                      {auth?.user?.name}
+                    </NavLink>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <NavLink
+                          to={`/dashboard/${
+                            auth?.user?.role === 1 ? "admin" : "user"
+                          }`}
+                          className="dropdown-item"
+                        >
+                          Dashboard
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          onClick={handleLogout}
+                          to="/login"
+                          className="dropdown-item"
+                        >
+                          Logout
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </li>
         </>
         
         )
