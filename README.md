@@ -81,6 +81,11 @@ The application should now be running locally on `http://localhost:3000/`.
 - Frontend: React
 - Backend: Node.js, Express.js ,JWT Authentication, Multer, 
 - Database: MongoDB
+  
+## Screenshots
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/49f93f05-6287-41fd-83df-3c0fe2c02b8e">
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/f92570de-f15f-49bc-96c7-23b53af08441">
+
 
 ## Contributing
 
