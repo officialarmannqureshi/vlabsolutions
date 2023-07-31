@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@300&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: "Poppins",'Montserrat','Tahoma', 'Verdana', sans-serif;
+    color: rgb(20, 20, 20);
+    
+    box-sizing:border-box;
+    cursor:auto;
+}
+#header{
+    display: flex;
+    
+    padding: 1rem;
+    margin: 0;
+    width: auto;
+    height: 3.5rem;
+    font-family: 'Poppins';
+    font-weight: 800;
+    font-size: 1rem;
+    position: relative;
+}
+body{
+    width: auto;
+    background-color: #ffffff;
+}
+.menu{
+    position: absolute;
+    right: 1.5rem;
+    font-weight: 100;
+    font-size: 14px;
+    contain: content;
+    width:20rem;
+    height:2rem;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+    
+}
+
+.menu li{
+    display: inline-grid;
+    grid-column: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    margin:1px;
+    cursor: pointer;
+}
+.menu ul{
+    width: 100%;
+    background-color: rgba(246, 210, 50, 0.3);
+
+    height: 1.5rem;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    
+    
+  
+    text-align: center;
+}
+hr{
+    background-color: rgb(253, 213, 144);
+    height: 2px;
+    border: 0;
+}
+.details{
+    display: flex;
+    justify-content: center;
+    height: 20rem;
+    width: 40rem;
+    background-color: rgb(255, 250, 241);
+    position: absolute;
+    top: 7rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.middle-02{
+    height: 90vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.details *{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.problemform{
+    text-align: center;
+    padding: 30px;
+}
+.submit{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 5rem;
+    border-radius: 20px;
+    border: 0;
+    background-color:firebrick;
+    color: #ffffff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}

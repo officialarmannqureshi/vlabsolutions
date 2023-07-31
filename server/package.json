@@ -1,0 +1,52 @@
+{
+  "name": "vlab",
+  "version": "1.0.0",
+  "description": "A comprehensive solution for the virtual labs",
+  "main": "server.js",
+  "type": "module",
+  "proxy": "http://localhost:8080",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon login.js",
+    "client": "npm start --prefix ./client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/officialarmannqureshi/vlabsolutions.git"
+  },
+  "author": "Nazim Qureshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/officialarmannqureshi/vlabsolutions/issues"
+  },
+  "homepage": "https://github.com/officialarmannqureshi/vlabsolutions#readme",
+  "keywords": [
+    "virtual",
+    "lab",
+    "lab"
+  ],
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "colors": "^1.4.0",
+    "concurrently": "^8.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mdb-react-ui-kit": "^6.1.0",
+    "mongoose": "^7.3.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22",
+    "react-helmet": "^6.1.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.10.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+}

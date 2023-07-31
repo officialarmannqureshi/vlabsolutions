@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/uploader.css">
+    <title>V-lab</title>
+</head>
+<body>
+    <div id="header">
+        V-lab Solutions
+        <div class="menu">
+            
+                <ul>
+                    <li class="home">Home</li>
+                    <li class="assign">Assignments</li>
+                    <li class="compile">Evaluation</li>
+                    
+                </ul>
+        
+        </div>
+    </div>
+    <hr>
+    <div id="container">
+       
+        <div class="middle-02">
+            <div class="details">
+                <form action="localhost:8080/upload" method="post" class="problemform">
+                
+                    <label for="assignment-name">Title</label>
+                    <input type="text" name="assignment-name" id="assname" size="50"><br>
+                    <textarea name="problems" id="problems" cols="80" rows="6" class="textarea"></textarea><br>
+                    <input type="submit" value="upload" class="submit">
+                </form>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+    
+    <script src="server.js">
+        
+    </script>
+</body>
+</html>
