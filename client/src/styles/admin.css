@@ -4,3 +4,95 @@
 .user-name{
     margin-top: 7px;
 }
+
+
+/*      Create Assignments */
+
+.assign-title{
+    font-family: 'Poppins';
+    text-align: center;
+    
+    height: 3rem;
+    width: auto;
+    margin: 10px;
+    border-radius: 11px;
+    background-color: #322653;
+    color: white;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    -ms-border-radius: 11px;
+    -o-border-radius: 11px;
+    
+}
+.assign-title-name{
+    font-family: 'Poppins';
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    align-items: center;
+    padding: 12px 5px;
+    align-items: center;
+}
+.item-1{
+    grid-column: 1 / span 2;
+    
+    
+}
+.assign-title{
+    font-family: 'Poppins';
+    position: relative;
+    align-items: center;
+    
+}
+
+.assign-span{
+    font-family: 'Poppins';
+    margin-left: 15px;
+    display: inline-flex;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    color: #322653;
+    justify-content: center;
+    
+}
+
+.assign-textarea{
+    position: relative;
+    padding: 10px 10px;
+    word-wrap: normal;
+    resize: none;
+    margin: 10px 10px;
+    
+}
+.assign-form-div-1{
+    font-family: 'Poppins';
+    margin: 10px 10px;
+    
+    text-align: center;
+}
+.assign-label-1{
+    position: relative;
+    left: 4rem;
+    margin-bottom: 6px;
+    
+    
+}
+.form-control{
+    width: auto;
+}
+.btn-primary{
+    position: none;
+    
+}
+.assign-button{
+    position: relative;
+    left: 3rem;
+    background-color: #25a309;
+}
+.assign-button:hover{
+    
+    background-color: #1c7e06;
+}

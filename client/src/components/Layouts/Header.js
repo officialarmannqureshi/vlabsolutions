@@ -6,6 +6,7 @@ import { useAuth } from '../../context/auth';
 import toast from 'react-hot-toast';
 const Header = () => {
   const [auth,setAuth] =useAuth();
+
   const handleLogout =()=>{
     setAuth({
       ...auth,
@@ -46,16 +47,25 @@ const Header = () => {
           })}
           >Home</NavLink>
         </li>
+    
         
-        <li className="nav-item">
-          <NavLink to="/upload"
-           className="nav-link"
-           style={({isActive})=>({
+         { auth?.user?.role===1?
+          <li className="nav-item">
+          <NavLink to="/create-assignment"
+            className="nav-link"
+            style={({isActive})=>({
             color:isActive ? 'black':'gray',
             textDecoration: 'none',
-          })}
-           >Upload</NavLink>
-        </li>
+          })
+          }
+      >Create Assignments</NavLink>
+          </li>:<li></li>
+}
+        
+       
+
+        
+
         {
           !auth.user ?(<><li className="nav-item">
           <NavLink to="/login" 
