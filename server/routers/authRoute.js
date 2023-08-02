@@ -18,7 +18,7 @@ router.post('/login',loginController);
 
 //route for create Assignments
 
-// router.post('/create-assignment',upload.single('file'),RequireSignIn,isAdmin,addFileController);
+router.post('/create-assignment',upload.single('file'),addFileController);
 
 // test route for JWT
 
