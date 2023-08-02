@@ -84,7 +84,10 @@ The application should now be running locally on `http://localhost:3000/`.
   
 ## Screenshots
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/49f93f05-6287-41fd-83df-3c0fe2c02b8e">
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/f92570de-f15f-49bc-96c7-23b53af08441">
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/f92570de-f15f-49bc-96c7-23b53af08441"><br>
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/1630a2fe-8088-4941-a1c8-9c15b1df2ce7">
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/87fe5ce4-eb21-4f0b-9536-cfa91814ee12">
+
 
 
 ## Contributing
