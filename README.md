@@ -78,7 +78,7 @@ The application should now be running locally on `http://localhost:3000/`.
 
 ## Technologies Used
 
-- Frontend: HTML,CSS,React,Javascript
+- Frontend: HTML,CSS,Javascript,React
 - Backend: Node.js, Express.js ,JWT Authentication, File Upload using Multer and Excel (csv to json) to MongoDB using csvtojson module.
 - Database: MongoDB
   
