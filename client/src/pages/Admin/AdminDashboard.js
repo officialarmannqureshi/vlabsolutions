@@ -21,8 +21,8 @@ const AdminDashboard = () => {
             <div className='text-center'>
             
             <section className='' style={{width:"auto",height:"auto"}}>
-  <div className="container  h-100">
-    <div className="row d-flex justify-content-center align-items-center h-100">
+  <div className="container  h-100 w-100">
+    <div className="row d-flex  align-items-center h-100" style={{width:"168rem"}}>
       <div className="col-md-12 col-xl-4">
 
         <div className="card">

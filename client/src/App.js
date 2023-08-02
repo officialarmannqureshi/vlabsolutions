@@ -11,12 +11,10 @@ import PrivateRoute from './components/Routes/Private';
 import AdminRoute from './components/Routes/AdminRoute';
 import AdminDashboard from './pages/Admin/AdminDashboard';
 import AdminStudent from './pages/Admin/AdminStudent';
-// import CreateAssignments from './pages/Admin/CreateAssignments';
+import CreateAssignments from './pages/Admin/CreateAssignments';
 import AdminAssignments from './pages/Admin/AdminAssignments';
 import AdminPerformance from './pages/Admin/AdminPerformance';
 import AdminSubmissions from './pages/Admin/AdminSubmissions';
-
-
 
 function App() {
   return (
@@ -37,7 +35,7 @@ function App() {
       <Route path='/login' element={<LoginPage/>}/>
       <Route path='/register' element={<SignupPage/>}/>
       <Route path='/policy' element={<PolicyPage/>}/>
-      {/* <Route path='/create-assignment' element={<CreateAssignments/>}/> */}
+      <Route path='/create-assignment' element={<CreateAssignments/>}/>
       <Route path='/pagenotfound' element={<PageNotFound/>}/>
       
       

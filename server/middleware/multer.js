@@ -1,26 +1,25 @@
-import multer from "multer";
-const storage=multer.diskStorage({
-    destination:function (req,file,cb){
-            cb(null,"./uploads/");        
-    },
-    filename:function(req,file,cb){
-        cb(null,new Date().toISOString()+file.originalname);
-    }
-});
+import multer from 'multer';
+import fs from 'fs';
+import path from 'path';
 
-const fileFilter= (req,file,cb)=>{
-    if(file.mimetype === 'application/pdf'){
-        cb(null,true);
-    }
-    else{
-        cb(null,false);
-    }
+const folderpath = path.join(process.cwd(), 'assignments');
+
+if (!fs.existsSync(folderpath)) {
+  fs.mkdirSync(folderpath);
+  console.log('Folder is created!');
 }
 
-const upload=multer({
-    storage:storage,
-    fileFilter:fileFilter,
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, folderpath);
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
 
+const upload = multer({
+  storage: storage,
 });
 
 export default upload;
