@@ -60,11 +60,22 @@ const Header = () => {
           }
       >Create Assignments</NavLink>
           </li>:<li></li>
-}
-        
-       
-
-        
+      
+        }
+        { auth?.user?.role===0?
+          <li className="nav-item">
+          <NavLink to="/assignments"
+            className="nav-link"
+            style={({isActive})=>({
+            color:isActive ? 'black':'gray',
+            textDecoration: 'none',
+          })
+          }
+      >Assignments</NavLink>
+          </li>:<li></li>
+      
+        }
+ 
 
         {
           !auth.user ?(<><li className="nav-item">

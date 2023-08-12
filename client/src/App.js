@@ -15,6 +15,7 @@ import CreateAssignments from './pages/Admin/CreateAssignments';
 import AdminAssignments from './pages/Admin/AdminAssignments';
 import AdminPerformance from './pages/Admin/AdminPerformance';
 import AdminSubmissions from './pages/Admin/AdminSubmissions';
+import Assignment from './pages/user/Assignment';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
       <Route path='/' element={<HomePage/>}/>
       <Route path='/dashboard' element={<PrivateRoute />}>
       <Route path="user" element={<Dashboard/>}/>
+      
+      
       </Route>
       <Route path='/dashboard' element={<AdminRoute/>}>
       <Route path="admin" element={<AdminDashboard/>}/>
@@ -37,7 +40,7 @@ function App() {
       <Route path='/policy' element={<PolicyPage/>}/>
       <Route path='/create-assignment' element={<CreateAssignments/>}/>
       <Route path='/pagenotfound' element={<PageNotFound/>}/>
-      
+      <Route path='/assignments' element={<Assignment/>}/>
       
     </Routes>
     </>

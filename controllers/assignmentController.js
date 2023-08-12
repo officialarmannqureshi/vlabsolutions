@@ -31,8 +31,24 @@ export const addFileController = async (req, res) => {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "File not uploaded",
+      message: "File not uploaded to DB",
       error,
     });
   }
 };
+
+export const getassignmentController= async(req,res)=>{
+  try {
+    const result=await assignmentModel.find();
+    res.status(200).send({
+      successs:true,
+      message:'File found',
+      result
+    })
+  } catch (error) {
+    res.status(500).send({
+      successs:false,
+      message:'File not found'
+    })
+  }
+}

@@ -1,0 +1,150 @@
+/*    Assignments */
+.assignment-container-main{
+    font-family: 'DM Sans','Poppins';
+    font-size: 15px;
+}
+.assign-dashboard{
+    border-radius: 6px;
+    border: solid 1.4px rgb(229, 229, 229);
+    height: 5rem;
+    width: 30%;
+    margin-right: 2rem;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: flex-start; /* Left-align items horizontally within the container */
+  justify-content: center;
+    
+}
+.assign-dashboard-3{
+    border-radius: 6px;
+    border: solid 1.4px rgb(229, 229, 229);
+    height: 5rem;
+    width: 30%;
+    
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.assignment-container{
+    display: flex;
+    
+    justify-content: center;
+    
+}
+.assignment-title{
+    font-family: 'DM Sans','Poppins';
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+.assignment-total{
+    font-family: 'DM Sans','Poppins';
+    font-size: 20px;
+    font-weight:800;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+.assignment-status{
+    font-family: 'DM Sans','Poppins';
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.assignments-detail-container{
+    position: relative;
+    left:1rem;
+    margin:1rem 1rem 1rem 1rem;
+    border-radius: 6px;
+    border: solid 1.4px rgb(229, 229, 229);
+    height: 40rem;
+    width: 95%;
+}
+.assignments-detail-container .row{
+    border-radius: 8px;
+    width: 98%;
+    margin: 11px 11px;
+    
+    height: 4rem;
+    background-color: rgba(240, 240, 239, 0.705);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.row .assignment-name{
+    font-family: 'DM Sans','Poppins';
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+.row .assignment-date{
+    font-family: 'DM Sans','Poppins';
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+}
+.row .assignment-small-container-2{
+    font-family: 'DM Sans','Poppins';
+    font-size: 12px;
+    width: 10rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    left: 20rem;
+}   
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+   
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+    
+}
+
+.assignment-small-container-2 .assignment-status{
+    color: #ffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 40px;
+    background-color: rgb(255, 164, 46);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    padding: 4px 4px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.assignment-small-container-2 .assignment-download{
+    color: #ffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 40px;
+    background-color: rgb(248, 56, 26);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    padding: 4px 4px;
+    border-color: none;
+    border-style: none;
+    margin-left:1rem ;
+    padding-right: 10px;
+    padding-left: 10px;
+}

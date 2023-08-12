@@ -4,6 +4,7 @@ import './index.css';
 import './styles/auth.css';
 import './styles/login.css';
 import './styles/admin.css';
+import './styles/user.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
