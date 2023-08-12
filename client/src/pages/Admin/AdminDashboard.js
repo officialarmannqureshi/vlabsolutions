@@ -1,14 +1,35 @@
-import React from 'react'
+import {React,useEffect ,useState} from 'react'
 import Layout from '../../components/Layouts/Layout'
 import AdminMenu from '../../components/Layouts/AdminMenu'
-import { useAuth } from '../../context/auth';
+import { useAuth} from '../../context/auth';
 import {CgProfile} from 'react-icons/cg';
 import {BsFacebook} from 'react-icons/bs';
 import {BsLinkedin} from 'react-icons/bs';
 import {BsTwitter} from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 const AdminDashboard = () => {
     const [auth]=useAuth();
+    const [data, setData] = useState([]);
+
+  const fetchInfo = () => {
+    return axios.get('/api/v1/auth/getall/').then((res) => setData(res.data));
+  };
+
+
+  const [assignmentdata, setAssignmentData] = useState([]);
+
+  const fetchAssignmentInfo = () => {
+    return axios.get('/api/v1/auth/getallassignments/').then((res) => setAssignmentData(res.data));
+  };
+
+  useEffect(() => {
+    fetchInfo();
+    fetchAssignmentInfo();
+  }, []);
+
+  const totalassignments=assignmentdata?.result?.length || 0;
+  const totalstudents=data?.studentsData?.length || 0;
   return (
     <Layout>
       <div className='container-fluid' style={{height:"100vh"}}>
@@ -20,7 +41,7 @@ const AdminDashboard = () => {
         <div className='col-md-9 '>
             <div className='text-center'>
             
-            <section className='' style={{width:"auto",height:"auto"}}>
+            <section className=''>
   <div className="container  h-100 w-100">
     <div className="row d-flex  align-items-center h-100" style={{width:"168rem"}}>
       <div className="col-md-12 col-xl-4">
@@ -57,11 +78,11 @@ const AdminDashboard = () => {
             
             <div className="d-flex justify-content-between text-center mt-5 mb-2">
               <div>
-                <p className="mb-2 h5">0</p>
+                <p className="mb-2 h5">{totalstudents}</p>
                 <p className="text-muted mb-0">Students</p>
               </div>
               <div className="px-3">
-                <p className="mb-2 h5">0</p>
+                <p className="mb-2 h5">{totalassignments}</p>
                 <p className="text-muted mb-0">Assignments Received</p>
               </div>
               <div>
