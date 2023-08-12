@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import Layout from '../../components/Layouts/Layout';
-import { useAuth } from '../../context/auth';
 import axios from 'axios';
+import React, {useState} from 'react';
+
+import Layout from '../../components/Layouts/Layout';
+import {useAuth} from '../../context/auth';
 
 const CreateAssignments = () => {
   const [auth] = useAuth();

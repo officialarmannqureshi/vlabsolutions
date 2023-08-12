@@ -1,26 +1,26 @@
-import {React,useEffect ,useState} from 'react'
-import Layout from '../../components/Layouts/Layout'
-import AdminMenu from '../../components/Layouts/AdminMenu'
-import { useAuth} from '../../context/auth';
-import {CgProfile} from 'react-icons/cg';
-import {BsFacebook} from 'react-icons/bs';
-import {BsLinkedin} from 'react-icons/bs';
-import {BsTwitter} from 'react-icons/bs';
-import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import {React, useEffect, useState} from 'react'
+import {BsFacebook, BsLinkedin, BsTwitter} from 'react-icons/bs';
+import {CgProfile} from 'react-icons/cg';
+import {NavLink} from 'react-router-dom';
+
+import AdminMenu from '../../components/Layouts/AdminMenu'
+import Layout from '../../components/Layouts/Layout'
+import {useAuth} from '../../context/auth';
+
 const AdminDashboard = () => {
-    const [auth]=useAuth();
-    const [data, setData] = useState([]);
+  const [auth] = useAuth();
+  const [data, setData] = useState([]);
 
   const fetchInfo = () => {
     return axios.get('/api/v1/auth/getall/').then((res) => setData(res.data));
   };
 
-
   const [assignmentdata, setAssignmentData] = useState([]);
 
   const fetchAssignmentInfo = () => {
-    return axios.get('/api/v1/auth/getallassignments/').then((res) => setAssignmentData(res.data));
+    return axios.get('/api/v1/auth/getallassignments/')
+        .then((res) => setAssignmentData(res.data));
   };
 
   useEffect(() => {
@@ -28,11 +28,12 @@ const AdminDashboard = () => {
     fetchAssignmentInfo();
   }, []);
 
-  const totalassignments=assignmentdata?.result?.length || 0;
-  const totalstudents=data?.studentsData?.length || 0;
+  const totalassignments = assignmentdata?.result?.length || 0;
+  const totalstudents = data?.studentsData?.length || 0;
   return (
     <Layout>
-      <div className='container-fluid' style={{height:"100vh"}}>
+      <div className='container-fluid' style={{
+    height: "100vh"}}>
        
       <div className='row mt-5'>
         <div className='col-md-3'>
@@ -57,23 +58,26 @@ const AdminDashboard = () => {
             <p>Lab id : {auth?.user?.id} <span class="mx-2">|</span> Email:{auth?.user?.email}</p>
             <div className="mb-4 pb-2">
             <NavLink to={"https://www.linkedin.com/in/nazim-qureshi-9b5189215/"} target='_blank' style={({isActive})=>({
-            color:isActive ? 'black':'black',
-            textDecoration: 'none',
+  color: isActive ? 'black' : 'black', textDecoration: 'none',
             
             
-          })}><BsFacebook className='icon' style={{fontSize: "" ,marginRight:"25px"}} /></NavLink>
+          })
+}><BsFacebook className='icon' style={{
+  fontSize: "", marginRight: "25px"}} /></NavLink>
             <NavLink to={"https://www.linkedin.com/in/nazim-qureshi-9b5189215/"} target='_blank' style={({isActive})=>({
             color:isActive ? 'black':'black',
             textDecoration: 'none',
             
             
-          })}><BsLinkedin className='icon' style={{fontSize: "",marginRight:"25px"}}/></NavLink>
+          })}><BsLinkedin className='icon' style={{
+  fontSize: "", marginRight: "25px"}}/></NavLink>
             <NavLink to={"https://www.linkedin.com/in/nazim-qureshi-9b5189215/"} target='_blank' style={({isActive})=>({
             color:isActive ? 'black':'black',
             textDecoration: 'none',
             
             
-          })}><BsTwitter className='icon' style={{fontSize: "",marginRight:"25px"}}/></NavLink>
+          })}><BsTwitter className='icon' style={{
+  fontSize: "", marginRight: "25px"}}/></NavLink>
             </div>
             
             <div className="d-flex justify-content-between text-center mt-5 mb-2">

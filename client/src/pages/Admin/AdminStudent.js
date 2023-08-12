@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Layout from '../../components/Layouts/Layout';
-import AdminMenu from '../../components/Layouts/AdminMenu';
-import { useAuth } from '../../context/auth';
 import axios from 'axios';
+import React, {useEffect, useState} from 'react';
+
+import AdminMenu from '../../components/Layouts/AdminMenu';
+import Layout from '../../components/Layouts/Layout';
+import {useAuth} from '../../context/auth';
 
 const AdminStudent = () => {
   const [data, setData] = useState([]);
