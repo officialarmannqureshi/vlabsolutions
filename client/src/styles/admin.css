@@ -11,7 +11,7 @@
 .assign-title{
     font-family: 'Poppins';
     text-align: center;
-    
+
     height: 3rem;
     width: auto;
     margin: 10px;
@@ -22,7 +22,7 @@
     -moz-border-radius: 11px;
     -ms-border-radius: 11px;
     -o-border-radius: 11px;
-    
+
 }
 .assign-title-name{
     font-family: 'Poppins';
@@ -36,14 +36,14 @@
 }
 .item-1{
     grid-column: 1 / span 2;
-    
-    
+
+
 }
 .assign-title{
     font-family: 'Poppins';
     position: relative;
     align-items: center;
-    
+
 }
 
 .assign-span{
@@ -56,13 +56,13 @@
     background-color: aliceblue;
     color: #322653;
     justify-content: center;
-    
+
 }
 
 .col-md-3{
     width: 255px;
     margin-right: 0;
-    
+
 }
 .assign-textarea{
     position: relative;
@@ -70,27 +70,27 @@
     word-wrap: normal;
     resize: none;
     margin: 10px 10px;
-    
+
 }
 .assign-form-div-1{
     font-family: 'Poppins';
     margin: 10px 10px;
-    
+
     text-align: center;
 }
 .assign-label-1{
     position: relative;
     left: 4rem;
     margin-bottom: 6px;
-    
-    
+
+
 }
 .form-control{
     width: auto;
 }
 .btn-primary{
     position: none;
-    
+
 }
 .assign-button{
     position: relative;
@@ -98,7 +98,7 @@
     background-color: #25a309;
 }
 .assign-button:hover{
-    
+
     background-color: #1c7e06;
 }
 
@@ -114,8 +114,8 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    
-    
+
+
 }
 
 .student-bulk-upload:hover{
@@ -123,21 +123,21 @@
     border-color: #765f92;
     text-align: center;
 
-    
+
 }
 .student-button{
     background-color: #38115b;
     position: relative;
     top: 1rem;
     left: 0rem;
-    
-    
+
+
 }
 .student-button:hover{
     background-color: #570d98ac;
-    
-    
-    
+
+
+
 }
 
 .input-file{
@@ -157,8 +157,8 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 1rem;
-    
-    
+
+
 }
 .grid-items{
     background-color: rgb(255, 251, 245);
@@ -174,5 +174,5 @@
 }
 
 .student-container{
-    
+
 }
