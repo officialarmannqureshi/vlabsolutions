@@ -1,6 +1,6 @@
 # Vlab Solutions
 
-[Apache license 2.0]
+[GNU General Public License v3.0]
 
 ## Table of Contents
 
@@ -99,5 +99,5 @@ Contributions to Vlab Solutions are welcome! If you find any issues or have sugg
 
 ## License
 
-This project is licensed under the [Apache license 2.0](LICENSE). Feel free to use and modify the code as per the terms of the license.
+This project is licensed under the [GNU General Public License v3.0](LICENSE). Feel free to use and modify the code as per the terms of the license.
 
