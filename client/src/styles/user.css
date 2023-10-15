@@ -17,14 +17,14 @@
   flex-direction: column; /* Stack elements vertically */
   align-items: flex-start; /* Left-align items horizontally within the container */
   justify-content: center;
-    
+
 }
 .assign-dashboard-3{
     border-radius: 6px;
     border: solid 1.4px rgb(229, 229, 229);
     height: 5rem;
     width: 30%;
-    
+
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
@@ -32,9 +32,9 @@
 }
 .assignment-container{
     display: flex;
-    
+
     justify-content: center;
-    
+
 }
 .assignment-title{
     font-family: 'DM Sans','Poppins';
@@ -74,7 +74,7 @@
     border-radius: 8px;
     width: 98%;
     margin: 11px 11px;
-    
+
     height: 4rem;
     background-color: rgba(240, 240, 239, 0.705);
     -webkit-border-radius: 8px;
@@ -104,17 +104,17 @@
     align-items: center;
     position: relative;
     left: 20rem;
-}   
+}
 
 .row{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-   
+
     justify-content: space-between;
     align-items: center;
-    
+
     width: 100%;
-    
+
 }
 
 .assignment-small-container-2 .assignment-status{
@@ -132,7 +132,7 @@
     padding-left: 10px;
     border-style: none;
     min-width: 100px;
-    
+
 }
 .assignment-small-container-2 .assignment-download{
     color: #ffff;

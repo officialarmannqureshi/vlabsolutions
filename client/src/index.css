@@ -34,8 +34,8 @@ font-family: 'Poppins', sans-serif;
 }
 .nav-item{
   margin-right: 30px;
- 
-  
+
+
 }
 .navbar-brand{
   font-weight: 300;
@@ -84,20 +84,20 @@ nav-link:hover{
   align-items: center;
   justify-content: center;
   height: 92vh;
-  
+
   flex-direction: column;
-  
+
 }
 .btn-primary{
   margin: auto auto;
   width: 7rem;
-  
+
   justify-content: center;
   position: relative;
   left: 25%;
   bottom: 2%;
   /* Center horizontally*/
-  
+
 }
 
 .align-item-center{
@@ -120,28 +120,28 @@ nav-link:hover{
 }
 .Input{
   float:left;
-  
+
   width: 50%;
   height: 50%;
   background-color: rgb(255, 255, 255);
 }
 .Output{
- 
+
   border-top: solid 1.4px rgb(229, 229, 229);
   float: right;
   width: 50%;
   height: 50%;
-  
+
 }
 .output-in-container{
-  
-  
+
+
   float: left;
 
   width: 100%;
   height: 90%;
   background-color: rgb(249, 246, 214);
-  
+
 }
 .User-input{
   float: left;
@@ -155,7 +155,7 @@ nav-link:hover{
   width: 50%;
   height: 100%;
   text-align: center;
-  
+
 }
 .User-input-textarea{
   background-color: #28262a;
@@ -180,8 +180,8 @@ nav-link:hover{
   height: 2.1rem;
   padding: 2px 8px 2px 8px;
   margin: 3px 0 3px 3px;
-  
-  
+
+
 }
 .language-code{
   float: right;
@@ -192,5 +192,3 @@ nav-link:hover{
 .Input-in-down{
   height: 10%;
 }
-
-
