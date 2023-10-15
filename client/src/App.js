@@ -7,6 +7,7 @@ import SignupPage from './pages/auth/Signup.js';
 // import UploadPage from './pages/Upload.js';
 import PageNotFound from './pages/PageNotFound.js';
 import Dashboard from './pages/user/Dashboard';
+import Workspace from './pages/user/Workspace';
 import PrivateRoute from './components/Routes/Private';
 import AdminRoute from './components/Routes/AdminRoute';
 import AdminDashboard from './pages/Admin/AdminDashboard';
@@ -41,7 +42,7 @@ function App() {
       <Route path='/create-assignment' element={<CreateAssignments/>}/>
       <Route path='/pagenotfound' element={<PageNotFound/>}/>
       <Route path='/assignments' element={<Assignment/>}/>
-      
+      <Route path='/Workspace' element={<Workspace/>}/>
     </Routes>
     </>
   );

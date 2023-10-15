@@ -47,6 +47,17 @@ const Header = () => {
           })}
           >Home</NavLink>
         </li>
+        
+        {auth?.user?.role===0 ?<li className="nav-item">
+          <NavLink to="/Workspace" 
+          className="nav-link"
+          style={({isActive})=>({
+            color:isActive ? 'black':'gray',
+            textDecoration: 'none',
+            
+          })}
+          >Workspace</NavLink>
+        </li> :<li></li>}
     
         
          { auth?.user?.role===1?
@@ -75,6 +86,9 @@ const Header = () => {
           </li>:<li></li>
       
         }
+        
+        
+        
  
 
         {

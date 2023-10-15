@@ -25,10 +25,15 @@ const assignmentsSchema = new mongoose.Schema(
     mimetype: {
       type: String,
     },
+    status: {
+      type: String,
+      default:'Pending',
+    }
   },
   {
     timestamps: true,
-  }
+  },
+  
 );
 
 export default mongoose.model('Assignments', assignmentsSchema);
