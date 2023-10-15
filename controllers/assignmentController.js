@@ -37,18 +37,21 @@ export const addFileController = async (req, res) => {
   }
 };
 
-export const getassignmentController= async(req,res)=>{
+export const getassignmentController = async (req, res) => {
   try {
-    const result=await assignmentModel.find();
+    const results = await assignmentModel.find();
+
+    
+
     res.status(200).send({
-      successs:true,
-      message:'File found',
-      result
-    })
+      success: true,
+      message: 'Files found',
+      result: results,
+    });
   } catch (error) {
     res.status(500).send({
-      successs:false,
-      message:'File not found'
-    })
+      success: false,
+      message: 'Files not found',
+    });
   }
-}
+};

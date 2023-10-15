@@ -130,6 +130,9 @@
     padding: 4px 4px;
     padding-right: 10px;
     padding-left: 10px;
+    border-style: none;
+    min-width: 100px;
+    
 }
 .assignment-small-container-2 .assignment-download{
     color: #ffff;
@@ -147,4 +150,16 @@
     margin-left:1rem ;
     padding-right: 10px;
     padding-left: 10px;
+    text-decoration: none;
+}
+
+.assignment-small-container-2 .assignment-download:hover{
+    background-color: rgb(201, 32, 6);
+}
+
+.assignments-detail-container .loading{
+    text-align: center;
+    margin: 5rem 5rem;
+    padding: 15px 15px;
+    font-size: 2rem;
 }
