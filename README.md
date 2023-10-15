@@ -22,11 +22,11 @@ Welcome to Vlab Solutions! This project is a web application designed to assist 
 
 - **User Authentication**: Students and instructors can create accounts and log in securely.
 - **Assignment Management**: Instructors can create assignments, and students can submit their completed work through the platform.
-- **Online Testing**: Instructors can design online tests with various question formats (e.g., multiple-choice, short answer) for students to take.  ``` In Progress ```
-- **Real-time Notifications**: Users receive notifications for assignment deadlines, test schedules, and other important updates.   ``` In Progress ```
+- **Online Testing**: Instructors can design online tests with various question formats (e.g., multiple-choice, short answer) for students to take. `In Progress`
+- **Real-time Notifications**: Users receive notifications for assignment deadlines, test schedules, and other important updates. `In Progress`
 - **Dashboard**: A personalized dashboard for each user, displaying relevant course information and upcoming tasks.
 - **Gradebook**: Instructors can review and grade student assignments and tests through the platform.
-- **Discussion Forum**: An integrated discussion forum where students and instructors can interact and seek clarifications.   <br> ``` In Progress ```
+- **Discussion Forum**: An integrated discussion forum where students and instructors can interact and seek clarifications. <br> `In Progress`
 - **File Uploads**: Users can upload necessary files for assignments and tests.
 
 ## Getting Started
@@ -41,17 +41,16 @@ To set up Vlab Solutions on your local machine, follow the steps below.
 ### Installation
 
 1. Clone the repository: <br>
+
 ```
-git clone https://github.com/your-username/vlabsolutions.git 
+git clone https://github.com/your-username/vlabsolutions.git
 cd vlabsolutions
 ```
 
-
 2. Install frontend and backend dependencies:
 
-
 3. Configure the environment variables:
--> Create a `.env` file in the `server` directory and set the following variables:
+   -> Create a `.env` file in the `server` directory and set the following variables:
 
 ```
 PORT=5000
@@ -60,12 +59,13 @@ JWT_KEY=your_secret_key_for_jwt
 ```
 
 4.Install concurrency dependency :
+
 ```
 npm i concurrently
 
 ```
- - to run multiple commands concurrently
 
+- to run multiple commands concurrently
 
 The application should now be running locally on `http://localhost:3000/`.
 
@@ -81,8 +81,9 @@ The application should now be running locally on `http://localhost:3000/`.
 - Frontend: HTML,CSS,Javascript,React
 - Backend: Node.js, Express.js ,JWT Authentication, File Upload using Multer and Excel (csv to json) to MongoDB using csvtojson module.
 - Database: MongoDB
-  
+
 ## Screenshots
+
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/49f93f05-6287-41fd-83df-3c0fe2c02b8e">
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/f92570de-f15f-49bc-96c7-23b53af08441"><br>
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/1630a2fe-8088-4941-a1c8-9c15b1df2ce7">
@@ -92,8 +93,6 @@ The application should now be running locally on `http://localhost:3000/`.
 
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/1470130a-2e74-4f85-8cbb-8fa5ab0c2219">
 
-
-
 ## Contributing
 
 Contributions to Vlab Solutions are welcome! If you find any issues or have suggestions for improvements, please feel free to create a pull request or raise an issue.
@@ -101,4 +100,3 @@ Contributions to Vlab Solutions are welcome! If you find any issues or have sugg
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE). Feel free to use and modify the code as per the terms of the license.
-
