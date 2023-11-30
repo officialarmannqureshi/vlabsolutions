@@ -18,10 +18,11 @@ const CreateAssignments = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    document.getElementById('onsubmitted').innerHTML='File uploaded successfully';
-    setTimeout(()=>{
-      document.getElementById('onsubmitted').style.display='none';
-    },2000);
+    document.getElementById('onsubmitted').innerHTML =
+      'File uploaded successfully';
+    setTimeout(() => {
+      document.getElementById('onsubmitted').style.display = 'none';
+    }, 2000);
     const formData = new FormData();
     formData.append('file', file);
     formData.append('uploadedby', auth?.user?.name);
@@ -40,7 +41,7 @@ const CreateAssignments = () => {
 
   return (
     <Layout>
-      <div className='' >
+      <div className=''>
         <div className='assign-title center '>
           <div className='text-center'>
             <div className='assign-title-name '>
@@ -74,7 +75,7 @@ const CreateAssignments = () => {
             </p>
             <div className='assign-form-div-1'>
               <textarea
-                cols={150}
+                cols={10}
                 rows={10}
                 placeholder='Write here'
                 autoComplete='on'
