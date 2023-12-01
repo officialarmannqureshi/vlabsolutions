@@ -75,7 +75,7 @@ const CreateAssignments = () => {
             </p>
             <div className='assign-form-div-1'>
               <textarea
-                cols={10}
+                cols={150}
                 rows={10}
                 placeholder='Write here'
                 autoComplete='on'

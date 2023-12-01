@@ -67,12 +67,9 @@
 .assign-form-div-1 {
   font-family: 'Poppins';
   margin: 10px 10px;
+
   text-align: center;
 }
-.assign-form-div-1 > textarea {
-  width: 100%;
-}
-
 .assign-label-1 {
   position: relative;
   left: 4rem;
