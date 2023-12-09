@@ -13,7 +13,7 @@ You can do this by clicking the "Fork" button on the vlabsolutions repository pa
 Clone the repository locally:
 
 After forking the repository, clone it locally on your computer so that you can work on the code and make changes.
-git clone https://github.com/<YOUR-USERNAME>/mocker.git
+git clone https://github.com/<YOUR-USERNAME>/vlabsolutions.git
 Create a new branch:
 
 Before making any changes, create a new branch in your local repository.
