@@ -2,8 +2,8 @@ import express from "express";
 import colors from "colors";
 import dotenv from "dotenv";
 import morgan from "morgan";
-import connectDB from "./config/db.js";
-import authRoutes from "./routers/authRoute.js";
+import connectDB from "./src/config/db.js";
+import authRoutes from "./src/routers/authRoute.js";
 import cors from "cors";
 
 
