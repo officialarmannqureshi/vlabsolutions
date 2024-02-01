@@ -21,7 +21,9 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-
+app.use("/",(req,res)=>{
+  res.send(`<h1>Welcome to the Auth Server</h1>`);
+})
 //routes
 app.use("/api/v1/auth", authRoutes);
 
