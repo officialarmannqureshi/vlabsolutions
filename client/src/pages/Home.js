@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import Layout from '../components/Layouts/Layout';
-import { useAuth } from '../context/auth';
-import { newsData } from '../news';
 import './Home.css'
-import { Link } from 'react-router-dom';
+
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
+
+import Layout from '../components/Layouts/Layout';
+import {useAuth} from '../context/auth';
+import {newsData} from '../news';
+
 const Home = () => {
   const [auth]=useAuth();
   const news = newsData;

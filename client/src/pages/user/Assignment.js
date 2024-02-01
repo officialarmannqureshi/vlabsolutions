@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import Layout from '../../components/Layouts/Layout';
 import axios from 'axios';
+import React, {useEffect, useState} from 'react'
+
+import Layout from '../../components/Layouts/Layout';
+
 // import { NavLink } from 'react-router-dom';
 const Assignment = () => {
     const [assignmentData, setAssignmentData] = useState(null);

@@ -1,31 +1,32 @@
-import React, { useState, useRef } from "react";
-import Layout from "../../components/Layouts/Layout";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
+import React, {useRef, useState} from "react";
+
+import Layout from "../../components/Layouts/Layout";
 
 const files = {
-  "71": {
-    name: "program.py",
-    language: "python",
-    value: "Write your Python program here",
+  "71" : {
+    name : "program.py",
+    language : "python",
+    value : "Write your Python program here",
   },
-  "54": {
-    name: "program.cpp",
-    language: "cpp",
-    value: "Write your C++ program here",
+  "54" : {
+    name : "program.cpp",
+    language : "cpp",
+    value : "Write your C++ program here",
   },
-  "50": {
-    name: "program.c",
-    language: "c",
-    value: "Write your C program here",
+  "50" : {
+    name : "program.c",
+    language : "c",
+    value : "Write your C program here",
   },
 
-  "62": {
-    name: "program.java",
-    language: "java",
-    value: "Write your Java program here",
+  "62" : {
+    name : "program.java",
+    language : "java",
+    value : "Write your Java program here",
   },
-  
+
 };
 
 const Workspace = () => {
