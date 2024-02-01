@@ -19,8 +19,8 @@ export const isAdmin = async (req, res, next) => {
     const user = await userModel.findById(req.user._id);
     if (user.role !== 1) {
       return res.status(401).send({
-        success : false,
-        message : "UnAuthorized Access",
+        success: false,
+        message: "UnAuthorized Access",
       });
     } else {
       next();
@@ -28,9 +28,9 @@ export const isAdmin = async (req, res, next) => {
   } catch (error) {
     console.log(error);
     res.status(401).send({
-      success : false,
+      success: false,
       error,
-      message : "Error in admin middelware",
+      message: "Error in admin middelware",
     });
   }
 };

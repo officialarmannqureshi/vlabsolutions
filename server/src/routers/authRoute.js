@@ -1,21 +1,21 @@
-import express from 'express';
+import express from "express";
 
 import {
   addFileController,
-  getassignmentController
-} from '../controllers/assignmentController.js';
+  getassignmentController,
+} from "../controllers/assignmentController.js";
 import {
   loginController,
   registerController,
-  testController
-} from '../controllers/authController.js';
+  testController,
+} from "../controllers/authController.js";
 import {
   student_file_controller,
-  student_file_get_controller
-} from '../controllers/student_file_controller.js';
-import {isAdmin, RequireSignIn} from '../middleware/authMiddleware.js';
-import upload_student from '../middleware/multer_admin_students.js';
-import upload from '../middleware/multer_assignment.js';
+  student_file_get_controller,
+} from "../controllers/student_file_controller.js";
+import { isAdmin, RequireSignIn } from "../middleware/authMiddleware.js";
+import upload_student from "../middleware/multer_admin_students.js";
+import upload from "../middleware/multer_assignment.js";
 
 // router object
 
@@ -24,37 +24,42 @@ const router = express.Router();
 // routing
 // registrating data and send it to controller to organize and respond acc. ||
 // method 'post'
-router.post('/register', registerController);
+router.post("/register", registerController);
 
 // route for JWT Authentications -LOGIN
 
-router.post('/login', loginController);
+router.post("/login", loginController);
 
 // route for create Assignments
 
-router.post('/create-assignment', upload.single('file'), addFileController);
+router.post("/create-assignment", upload.single("file"), addFileController);
 
 // test route for JWT
 
-router.post('/test', RequireSignIn, testController);
+router.post("/test", RequireSignIn, testController);
 
 // protected route
 
-router.get('/user-auth', RequireSignIn,
-           (req, res) => { res.status(200).send({ok : true}); })
+router.get("/user-auth", RequireSignIn, (req, res) => {
+  res.status(200).send({ ok: true });
+});
 
-router.get('/admin-auth', RequireSignIn, isAdmin,
-           (req, res) => { res.status(200).send({ok : true}); })
+router.get("/admin-auth", RequireSignIn, isAdmin, (req, res) => {
+  res.status(200).send({ ok: true });
+});
 
 // for admin/students -to upload students details to DB
 
-router.post('/uploadall', upload_student.single('student-file'),
-            student_file_controller);
+router.post(
+  "/uploadall",
+  upload_student.single("student-file"),
+  student_file_controller,
+);
 
 // to getting all student's details
 
-router.get('/getall', student_file_get_controller);
+router.get("/getall", student_file_get_controller);
 
-router.get('/getallassignments', getassignmentController);
+router.get("/getallassignments", getassignmentController);
 
 export default router;
