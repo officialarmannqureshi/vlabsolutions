@@ -1,5 +1,5 @@
 import express from 'express';
-import {registerController,loginController,testController} from '../controllers/authController.js';
+import { registerController, loginController,testController} from '../controllers/authController.js';
 import { RequireSignIn, isAdmin} from '../middleware/authMiddleware.js';
 import {addFileController,getassignmentController } from '../controllers/assignmentController.js';
 import upload from '../middleware/multer_assignment.js';
