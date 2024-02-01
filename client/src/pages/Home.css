@@ -4,7 +4,7 @@
     padding: 5px;
     margin:3px 8px 6px 8px;
     font-size: 12px;
-   
+
 }
 .scroll{
     margin: 4px, 4px;
@@ -14,9 +14,9 @@
     height: 280px;
     overflow-x: hidden;
     overflow-y: auto;
-    text-align: justify;  
+    text-align: justify;
     margin: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
     background-color: rgb(224, 251, 233);
 }
 .news-header{
