@@ -64,6 +64,10 @@ const Register = () => {
     <label for="exampleInputPassword1" className="form-label">Password</label>
     <input type="password" class="form-control" onChange={(e)=>setPassword(e.target.value)}  id="exampleInputPassword1" placeholder='Enter password' value={password} required/>
   </div>
+  <div className="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
+    <label class="htmlForm-check-label" for="exampleCheck1">Check me out</label>
+  </div>
   <button type="submit" className="btn btn-primary">Submit</button>
 </form>
         </div>

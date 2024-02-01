@@ -1,92 +1,70 @@
-# Vlab Solutions
+# Getting Started with Create React App
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Table of Contents
+## Available Scripts
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
+In the project directory, you can run:
 
-## Introduction
+### `npm start`
 
-Welcome to Vlab Solutions! This project is a web application designed to assist colleges and students in managing their assignment works and conducting tests online. The platform is built using React for the frontend and Node.js with Express.js for the backend. MongoDB serves as the database to store essential information.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Features
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- **User Authentication**: Students and instructors can create accounts and log in securely.
-- **Assignment Management**: Instructors can create assignments, and students can submit their completed work through the platform.
-- **Online Testing**: Instructors can design online tests with various question formats (e.g., multiple-choice, short answer) for students to take.  ``` In Progress ```
-- **Real-time Notifications**: Users receive notifications for assignment deadlines, test schedules, and other important updates.   ``` In Progress ```
-- **Dashboard**: A personalized dashboard for each user, displaying relevant course information and upcoming tasks.
-- **Gradebook**: Instructors can review and grade student assignments and tests through the platform.
-- **Discussion Forum**: An integrated discussion forum where students and instructors can interact and seek clarifications.   <br> ``` In Progress ```
-- **File Uploads**: Users can upload necessary files for assignments and tests.
+### `npm test`
 
-## Getting Started
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-To set up Vlab Solutions on your local machine, follow the steps below.
+### `npm run build`
 
-### Prerequisites
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Node.js (v12 or higher) installed on your system
-- MongoDB installed and running
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Installation
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-1. Clone the repository: <br>
-```
-git clone https://github.com/your-username/vlabsolutions.git 
-cd vlabsolutions
-```
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-2. Install frontend and backend dependencies:
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-3. Configure the environment variables:
--> Create a `.env` file in the `server` directory and set the following variables:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-```
-PORT=5000
-MONGO_DB=your_mongodb_connection_string
-JWT_KEY=your_secret_key_for_jwt
-```
+## Learn More
 
-4.Install concurrency dependency :
-```
-npm i concurrently
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```
- - to run multiple commands concurrently
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-The application should now be running locally on `http://localhost:3000/`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Usage
+### Analyzing the Bundle Size
 
-1. Visit `http://localhost:3000/` in your web browser.
-2. If you don't have an account, sign up as a student or instructor.
-3. Log in with your credentials.
-4. Explore the dashboard, create assignments, take tests, and manage your submissions.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## Technologies Used
+### Making a Progressive Web App
 
-- Frontend: React
-- Backend: Node.js, Express.js ,JWT Authentication, Multer, 
-- Database: MongoDB
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## Contributing
+### Advanced Configuration
 
-Contributions to Vlab Solutions are welcome! If you find any issues or have suggestions for improvements, please feel free to create a pull request or raise an issue.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## License
+### Deployment
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use and modify the code as per the terms of the license.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
