@@ -2,8 +2,8 @@ import express from 'express';
 import { registerController, loginController,testController} from '../controllers/authController.js';
 import { RequireSignIn, isAdmin} from '../middleware/authMiddleware.js';
 import {addFileController,getassignmentController } from '../controllers/assignmentController.js';
-import upload from '../middleware/multer_assignment.js';
-import upload_student from '../middleware/multer_admin_students.js';
+// import upload from '../middleware/multer_assignment.js';
+// import upload_student from '../middleware/multer_admin_students.js';
 import { student_file_controller,student_file_get_controller } from '../controllers/student_file_controller.js';
 
 //router object
@@ -20,7 +20,8 @@ router.post('/login',loginController);
 
 //route for create Assignments
 
-router.post('/create-assignment',upload.single('file'),addFileController);
+router.post('/create-assignment',addFileController);
+// router.post('/create-assignment',upload.single('file'),addFileController);
 
 // test route for JWT
 
@@ -38,7 +39,8 @@ router.get('/admin-auth',RequireSignIn,isAdmin,(req,res)=>{
 
 // for admin/students -to upload students details to DB
 
-router.post('/uploadall',upload_student.single('student-file'),student_file_controller);
+router.post('/uploadall',student_file_controller);
+// router.post('/uploadall',upload_student.single('student-file'),student_file_controller);
 
 //to getting all student's details
 
