@@ -193,4 +193,21 @@ nav-link:hover{
   height: 10%;
 }
 
-
+.status-code{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(255, 49, 49);
+  display: inline-block;
+  margin-left: 1rem;
+  
+}
+.save-code{
+  float: left;
+  height: 2.1rem;
+  padding: 2px 8px 2px 8px;
+  margin: 3px 0 3px 3px;
+  background-color: #075eff;
+  border-style: none;
+}
+.save-code:hover{
+  background-color: #003eb3;
+}

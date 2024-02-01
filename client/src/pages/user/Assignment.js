@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../../components/Layouts/Layout';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 const Assignment = () => {
     const [assignmentData, setAssignmentData] = useState(null);
     const [loading,setLoading] = useState(true);
-  
+
     const fetchData1 = async () => {
       try {
         const response = await axios.get('/api/v1/auth/getallassignments');
         setAssignmentData(response.data);
+        console.log(assignmentData);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching assignment data:', error);
@@ -17,11 +18,40 @@ const Assignment = () => {
     };
   
     useEffect(() => {
-      fetchData1();
+      const fetchData = async () => {
+        await fetchData1();
+      };
+    
+      fetchData();
     }, []);
+    
     
     let count = 0;
     let submitcount=0;
+//dummy
+
+// const onButtonClick = () => {
+     
+//   // using Java Script method to get PDF file
+//   fetch(`${assignmentData.result[0].path}`).then((response) => {
+//       response.blob().then((blob) => {
+       
+//           // Creating new object of PDF file
+//           const fileURL =
+//               window.URL.createObjectURL(blob);
+//               console.log(fileURL)
+               
+//           // Setting various property values
+//           let alink = document.createElement("a");
+//           alink.href = fileURL;
+//           alink.download = "SamplePDF.pdf";
+//           alink.click();
+//       });
+//   });
+// };
+
+
+
     function countPendingObjects(AssignmentDetails) {
       
         
@@ -52,6 +82,16 @@ const Assignment = () => {
     function formatDate(isoDate){
         const options= {day:'numeric',month:'long',year:'numeric'};
         return new Date(isoDate).toLocaleString(undefined, options);
+    }
+
+    function handleDownload(e) {
+      const filename = e.target.name;
+      const fileURL = `${process.env.PUBLIC_URL}/assignments/${filename}`;
+      console.log(e.target.href)
+      // const link = document.createElement('a');
+      // link.href = fileURL;
+      // link.download = filename;
+      // link.click();
     }
 
     
@@ -91,9 +131,12 @@ const Assignment = () => {
                 <div className='row' key={index}  >
 
                   <div className='assignment-small-container-1'>
-                    <NavLink className="" activeClassName="is-active" to="/Workspace">
+                    {/* <NavLink className="" activeClassName="is-active" to="/Workspace"> */}
+                    <a href='/assignments/C1_W1.pdf' target='_blank'>
+                      
                     <p className='assignment-name'>{assignment['filename']}</p>
-                    </NavLink>
+                    </a>
+                    {/* </NavLink> */}
                     {/* Display formatted date here */}
                     <p className='assignment-date'>uploaded on {formatDate(assignment['updatedAt'])}</p>
                   </div>
@@ -101,9 +144,10 @@ const Assignment = () => {
                     <button className='assignment-status' id='status' onClick={null} >
                       {assignment['status']}
                     </button>
-                    <a className='assignment-download' href={assignment['path']} download>
-                        Download 
+                    <a className='assignment-download' name={assignment['filename']} href={`/assignments/${assignment['filename']}`} download={`/assignments/${assignment['filename']}`} onClick={handleDownload}>
+                      Download
                     </a>
+                
                   </div>
                 </div>
               ))

@@ -1,0 +1,25 @@
+.news-outerbox{
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 6px;
+    padding: 5px;
+    margin:3px 8px 6px 8px;
+    font-size: 12px;
+   
+}
+.scroll{
+    margin: 4px, 4px;
+    padding: 4px;
+    border: 1px solid rgb(64, 64, 64);
+    width: auto;
+    height: 280px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;  
+    margin: 5px;
+    border-radius: 5px; 
+    background-color: rgb(224, 251, 233);
+}
+.news-header{
+    margin-top: 30px;
+    margin-left: 10px;
+}
