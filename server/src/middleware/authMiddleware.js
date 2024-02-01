@@ -9,6 +9,7 @@ export const RequireSignIn = async (req, res, next) => {
       process.env.JWT_KEY
     );
     req.user = decode;
+    
     next();
   } catch (error) {
     console.log(error);
