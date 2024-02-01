@@ -1,4 +1,4 @@
-import userModel from "../models/userModel.js";
+import userModel from '../models/userModel.js'
 import { comparePassword, hashedpwd } from "../utils/authHelper.js";
 import JWT from "jsonwebtoken";
 import { RequireSignIn } from "../middleware/authMiddleware.js";

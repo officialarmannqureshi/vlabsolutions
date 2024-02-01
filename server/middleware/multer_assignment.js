@@ -2,7 +2,7 @@ import multer from 'multer';
 import fs from 'fs';
 import path from 'path';
 
-const folderpath = path.join(process.cwd(), 'client/public/assignments');
+const folderpath = path.join(process.cwd(), '../client/public/assignments');
 const folderpath_students = path.join(process.cwd(), 'students-details');
 
 if(!fs.existsSync(folderpath_students)){

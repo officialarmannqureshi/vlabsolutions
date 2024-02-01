@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon login.js",
-    "client": "npm start --prefix ./client",
+    "client": "npm start --prefix ../client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
@@ -21,11 +21,7 @@
     "url": "https://github.com/officialarmannqureshi/vlabsolutions/issues"
   },
   "homepage": "https://github.com/officialarmannqureshi/vlabsolutions#readme",
-  "keywords": [
-    "virtual",
-    "lab",
-    "lab"
-  ],
+  "keywords": ["virtual", "lab", "lab"],
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
