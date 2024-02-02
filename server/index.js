@@ -5,7 +5,7 @@ import morgan from "morgan";
 import connectDB from "./src/config/db.js";
 import authRoutes from "./src/routers/authRoute.js";
 import cors from "cors";
-const { createProxyMiddleware } = require('http-proxy-middleware');
+import createProxyMiddleware from "http-proxy-middleware";
 
 
 //configure env
@@ -17,12 +17,10 @@ connectDB();
 //rest object
 const app = express();
 
-app.use('/v1/storage', createProxyMiddleware({
-  target: 'https://cloud.appwrite.io',
-  changeOrigin: true,
+app.use(cors({
+  origin: 'https://vlabsolutions-client.vercel.app',
 }));
-//middelwares
-app.use(cors());
+
 app.use(express.json());
 app.use(morgan("dev"));
 
