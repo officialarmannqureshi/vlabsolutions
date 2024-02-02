@@ -3,22 +3,29 @@ import path from "path";
 
 export const addFileController = async (req, res) => {
   try {
-    if (!req.file) {
+    if (!req) {
       return res.status(400).send({
         success: false,
         message: "No file uploaded",
       });
     }
 
-    const { assignment, id, uploadedby } = req.body;
-    const { filename, mimetype, path } = req.file; // Destructure the file details
+    const { assignment, id, uploadedby,path,filename } = req.body;
+    // const { filename, mimetype, path } = req.file; // Destructure the file details
 
+    // const filedetails = await new assignmentModel({
+    //   filename,
+    //   mimetype,
+    //   path,
+    //   assignment,
+    //   uploadedby,
+    //   id,
+    // }).save();
     const filedetails = await new assignmentModel({
-      filename,
-      mimetype,
       path,
-      assignment,
+      filename,
       uploadedby,
+      assignment,
       id,
     }).save();
 
