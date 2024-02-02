@@ -22,9 +22,6 @@ const assignmentsSchema = new mongoose.Schema(
       type: String,
       trim: false,
     },
-    mimetype: {
-      type: String,
-    },
     status: {
       type: String,
       default:'Pending',
