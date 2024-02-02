@@ -24,7 +24,7 @@ const AuthProvider =({children})=>{
                 token:ParseData.token,
             })
         }
-    },[auth]);
+    },[]);
     return (<authContext.Provider value={[auth,setAuth]}>
         {children}
     </authContext.Provider>)

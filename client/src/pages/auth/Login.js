@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import { useNavigate,useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/auth';
+import { baseUrl } from '../../private';
 const Login = () => {
   
   const [id,setRollno] = useState("")
@@ -18,7 +19,7 @@ const Login = () => {
     console.log(process.env.REACT_APP_API);
     try {
       const res = await axios.post(
-      "/api/v1/auth/login/",
+      baseUrl+'/api/v1/auth/login/',
       {
         id,
         password,

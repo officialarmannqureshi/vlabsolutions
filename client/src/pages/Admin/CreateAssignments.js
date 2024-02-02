@@ -1,8 +1,14 @@
+/**
+ * The above code is a React component that allows users to create assignments by either uploading a
+ * file or writing the assignment text directly.
+ * @returns The CreateAssignments component is being returned.
+ */
 import React, { useState } from 'react';
 import Layout from '../../components/Layouts/Layout';
 import { useAuth } from '../../context/auth';
 import axios from 'axios';
-
+import { Client, Storage, ID } from "appwrite";
+import { baseUrl } from "../../private";
 const CreateAssignments = () => {
   const [auth] = useAuth();
   const [file, setFile] = useState(null);
@@ -16,31 +22,73 @@ const CreateAssignments = () => {
     setAssignment(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    document.getElementById('onsubmitted').innerHTML='File uploaded successfully';
-    setTimeout(()=>{
-      document.getElementById('onsubmitted').style.display='none';
-    },2000);
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('uploadedby', auth?.user?.name);
-    formData.append('assignment', assignment);
-    formData.append('id', auth?.user?.id);
+  const client = new Client()
+    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setProject('65bcc6ec62054d208033');
 
-    axios
-      .post('/api/v1/auth/create-assignment/', formData)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error('Error in Axios POST request:', error);
-      });
-  };
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+    
+      const storage = new Storage(client);
+    
+      try {
+        const result = await storage.createFile(
+          '65bcc751b7e1e479a0e7',
+          ID.unique(),
+          file
+        );
+    
+
+    
+        const filename = result.name;
+    
+        const pathPromise = storage.getFileView('65bcc751b7e1e479a0e7', result.$id);
+       
+    
+        try {
+          let path;
+          const response = await pathPromise;
+          path = response.href;
+          document.getElementById('onsubmitted').innerHTML =
+            'File uploaded successfully';
+          setTimeout(() => {
+            document.getElementById('onsubmitted').style.display = 'none';
+          }, 2000);
+
+          const formData = {
+            path: path,
+            filename: filename,
+            uploadedby: auth?.user?.name,
+            assignment: assignment,
+            id: auth?.user?.id,
+          };
+    
+          
+          
+
+
+          axios
+            .post(baseUrl+'/api/v1/auth/create-assignment/', formData)
+            .then((response) => {
+              console.log(response.data);
+            })
+            .catch((error) => {
+              console.error('Error in Axios POST request:', error);
+            });
+        } catch (error) {
+          console.log(error); // Handle the error appropriately
+        }
+      } catch (error) {
+        console.log(error); // Handle the error appropriately
+        return;
+      }
+    };
+    
+    
 
   return (
     <Layout>
-      <div className='' >
+      <div className=''>
         <div className='assign-title center '>
           <div className='text-center'>
             <div className='assign-title-name '>
