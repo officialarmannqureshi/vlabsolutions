@@ -1,36 +1,35 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const assignmentsSchema = new mongoose.Schema(
-    {
-      filename : {
-        type : String,
-        //   required: [true, 'Please provide assignment name!'],
-        trim : false,
-      },
-      id : {
-        type : String,
-        trim : false,
-      },
-      uploadedby : {
-        type : String,
-        trim : false,
-      },
-      path : {
-        type : String,
-      },
-      assignment : {
-        type : String,
-        trim : false,
-      },
-      status : {
-        type : String,
-        default : 'Pending',
-      }
+  {
+    filename: {
+      type: String,
+      //   required: [true, 'Please provide assignment name!'],
+      trim: false,
     },
-    {
-      timestamps : true,
+    id: {
+      type: String,
+      trim: false,
     },
-
+    uploadedby: {
+      type: String,
+      trim: false,
+    },
+    path: {
+      type: String,
+    },
+    assignment: {
+      type: String,
+      trim: false,
+    },
+    status: {
+      type: String,
+      default: "Pending",
+    },
+  },
+  {
+    timestamps: true,
+  },
 );
 
-export default mongoose.model('Assignments', assignmentsSchema);
+export default mongoose.model("Assignments", assignmentsSchema);
