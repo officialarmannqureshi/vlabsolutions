@@ -3,6 +3,7 @@ import Layout from '../../components/Layouts/Layout'
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { baseUrl } from '../../private';
 const Register = () => {
   
   const [id,setRollno] = useState("")
@@ -16,7 +17,7 @@ const Register = () => {
     console.log(process.env.REACT_APP_API);
     try {
       const res = await axios.post(
-      "/api/v1/auth/register/",
+      baseUrl+"/api/v1/auth/register/",
       {
         id,
         name,

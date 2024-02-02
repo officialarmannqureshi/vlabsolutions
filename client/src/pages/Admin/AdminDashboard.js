@@ -8,19 +8,20 @@ import {BsLinkedin} from 'react-icons/bs';
 import {BsTwitter} from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import { baseUrl } from "../../private";
 const AdminDashboard = () => {
     const [auth]=useAuth();
     const [data, setData] = useState([]);
 
   const fetchInfo = () => {
-    return axios.get('/api/v1/auth/getall/').then((res) => setData(res.data));
+    return axios.get(baseUrl+'/api/v1/auth/getall/').then((res) => setData(res.data));
   };
 
 
   const [assignmentdata, setAssignmentData] = useState([]);
 
   const fetchAssignmentInfo = () => {
-    return axios.get('/api/v1/auth/getallassignments/').then((res) => setAssignmentData(res.data));
+    return axios.get(baseUrl+'/api/v1/auth/getallassignments/').then((res) => setAssignmentData(res.data));
   };
 
   useEffect(() => {

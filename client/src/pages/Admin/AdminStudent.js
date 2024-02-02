@@ -3,12 +3,13 @@ import Layout from '../../components/Layouts/Layout';
 import AdminMenu from '../../components/Layouts/AdminMenu';
 import { useAuth } from '../../context/auth';
 import axios from 'axios';
-
+import { Client, Storage, ID } from "appwrite";
+import { baseUrl } from "../../private";
 const AdminStudent = () => {
   const [data, setData] = useState([]);
 
   const fetchInfo = () => {
-    return axios.get('/api/v1/auth/getall/').then((res) => setData(res.data));
+    return axios.get(baseUrl+'/api/v1/auth/getall/').then((res) => setData(res.data));
   };
 
 
@@ -24,7 +25,30 @@ const AdminStudent = () => {
     setFile(event.target.files[0]);
   };
 
-  const handleSubmit = (event) => {
+  const client = new Client()
+  .setEndpoint('https://cloud.appwrite.io/v1')
+  .setProject('65bcc6ec62054d208033');
+
+  const handleSubmit = async (event) => {
+
+    const storage = new Storage(client);
+    
+      try {
+        const result = await storage.createFile(
+          '65bcc73d019025fba4b5',
+          ID.unique(),
+          file
+        );
+        console.log(result);
+
+    
+        const pathPromise = storage.getFileView('65bcc73d019025fba4b5', result.$id);
+        let path;
+        const response = await pathPromise;
+        path = response.href;
+
+     
+       
     document.getElementById('students-file').value = '';
     document.getElementById('onsubmitted').innerHTML =
       'File has been uploaded successfully';
@@ -34,19 +58,24 @@ const AdminStudent = () => {
     }, 2000);
     event.preventDefault();
 
-    const formData = new FormData();
-    formData.append('student-file', file);
-    formData.append('uploadedby', auth?.user?.name);
-    formData.append('id', auth?.user?.id);
+    const formData = {
+      'path': path,
+      'uploadedby': auth?.user?.name,
+      'id': auth?.user?.id,
+    };
 
     axios
-      .post('/api/v1/auth/uploadall/', formData)
+      .post(baseUrl+'/api/v1/auth/uploadall/', formData)
       .then((response) => {
         console.log(response.data);
       })
       .catch((error) => {
         console.error('Error in Axios POST request:', error);
       });
+    } catch (err) {
+      console.log(err);
+      
+    }
   };
 
   return (

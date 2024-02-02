@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../../components/Layouts/Layout';
 import axios from 'axios';
+import { baseUrl } from "../../private";
 // import { NavLink } from 'react-router-dom';
 const Assignment = () => {
     const [assignmentData, setAssignmentData] = useState(null);
@@ -8,7 +9,7 @@ const Assignment = () => {
 
     const fetchData1 = async () => {
       try {
-        const response = await axios.get('/api/v1/auth/getallassignments');
+        const response = await axios.get(baseUrl+'/api/v1/auth/getallassignments');
         setAssignmentData(response.data);
         console.log(assignmentData);
         setLoading(false);
