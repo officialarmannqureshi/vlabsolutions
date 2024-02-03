@@ -5,6 +5,7 @@ import { useAuth } from '../../context/auth';
 import axios from 'axios';
 import { Client, Storage, ID } from "appwrite";
 import { baseUrl } from "../../private";
+import '../../styles/responsive css/admin_student.css'
 const AdminStudent = () => {
   const [data, setData] = useState([]);
 
@@ -80,15 +81,15 @@ const AdminStudent = () => {
 
   return (
     <Layout>
-      <div className='student-container'>
+      <div className='student-container' >
       <div className='container-fluid' >
-        <div className='row mt-5'>
-          <div className='col-md-3'>
+        <div className='container-dashboard mt-2'>
+          <div className='dashboard-menu'>
             <AdminMenu />
           </div>
           <div
-            className='col-md-9 content-box '
-            style={{ textAlign: 'center' }}
+            className='bulk-upload-container-main'
+            style={{ textAlign: 'center' ,width:'80%'}}
           >
             <div className='text-center'>
               {/* Student upload section */}
@@ -97,9 +98,9 @@ const AdminStudent = () => {
                 style={{
                   borderRadius: '10px',
                   border: '#4d385f dashed',
-                  padding: '2rem 2rem',
-                  paddingLeft: '15rem',
-                  paddingRight: '15rem',
+                  
+                  paddingLeft: '4rem',
+                  paddingRight: '4rem',
                   textAlign: 'center',
                   display: 'flex',
                   flexDirection: 'column',
@@ -109,7 +110,7 @@ const AdminStudent = () => {
                   gap: '1rem',
                 }}
               >
-                <p style={{ fontSize: '25px', fontWeight: 'bold',width:'100%' }}>
+                <p className="drop-text"style={{ fontWeight: 'bold',width:'100%' }}>
                   Drop files here
                 </p>
                 <p style={{ font: 'Poppins', fontSize: '13px' }}>
@@ -121,7 +122,7 @@ const AdminStudent = () => {
                   onChange={handleFileChange}
                   required
                   id='students-file'
-                  style={{ marginBottom: '1rem' }}
+                  style={{ marginBottom: '1rem'}}
                   className='input-file'
                 ></input>
                 <button
@@ -145,7 +146,7 @@ const AdminStudent = () => {
             <div className='row-students'>
             {data.studentsData && data.studentsData.map((student, index) => (
                 <div className='col-' key={index}>
-                  <div className='card grid-items'>
+                  <div className='card grid-items font-adjust' style={{width:'auto'}}>
                     <div className='card-body'>
                       <h5 className='card-title'>
                         {student['First Name']} {student['Last Name']}
