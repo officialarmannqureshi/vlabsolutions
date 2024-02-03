@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../../components/Layouts/Layout';
 import axios from 'axios';
+import '../../styles/responsive css/assignment.css'
 import { baseUrl } from "../../private";
 // import { NavLink } from 'react-router-dom';
 const Assignment = () => {
@@ -86,9 +87,7 @@ const Assignment = () => {
     }
 
     function handleDownload(e) {
-      const filename = e.target.name;
-      const fileURL = `${process.env.PUBLIC_URL}/assignments/${filename}`;
-      console.log(e.target.href)
+      
       // const link = document.createElement('a');
       // link.href = fileURL;
       // link.download = filename;
@@ -103,7 +102,7 @@ const Assignment = () => {
         <div className='assignment-container mt-3'>
         <div className='assign-dashboard'>
             <p className='assignment-title'>Total Assigned</p>
-            <p className='assignment-total'>{totalAssigned}</p>
+            <p className='assignment-total '>{totalAssigned}</p>
             <p className='assignment-status'>Last updated today</p>
 
         </div>
@@ -135,7 +134,11 @@ const Assignment = () => {
                     {/* <NavLink className="" activeClassName="is-active" to="/Workspace"> */}
                     <a href='/assignments/C1_W1.pdf' target='_blank'>
                       
-                    <p className='assignment-name'>{assignment['filename']}</p>
+                    <p className='assignment-name'>{
+            
+                    String(assignment['filename']).substring(0,15)
+                    
+                    }</p>
                     </a>
                     {/* </NavLink> */}
                     {/* Display formatted date here */}

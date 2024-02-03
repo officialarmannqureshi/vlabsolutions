@@ -9,6 +9,7 @@ import {BsTwitter} from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { baseUrl } from "../../private";
+import '../../styles/responsive css/dashboard.css'
 const AdminDashboard = () => {
     const [auth]=useAuth();
     const [data, setData] = useState([]);
@@ -33,24 +34,24 @@ const AdminDashboard = () => {
   const totalstudents=data?.studentsData?.length || 0;
   return (
     <Layout>
-      <div className='container-fluid' style={{height:"100vh"}}>
+      <div className='container-fluid absolute' style={{height:"100vh",marginTop:'1rem'}} >
        
-      <div className='row mt-5'>
-        <div className='col-md-3'>
+      <div className='container-dashboard'>
+        <div className='dashboard-menu'>
             <AdminMenu/> 
         </div>
-        <div className='col-md-9 '>
+        <div className='dashboard-details'>
             <div className='text-center'>
             
             <section className=''>
-  <div className="container  h-100 w-100">
-    <div className="row d-flex  align-items-center h-100" style={{width:"168rem"}}>
+  <div className="container  dashboard-details">
+    <div className="row d-flex  align-items-center h-100 dashboard-details-inside" >
       <div className="col-md-12 col-xl-4">
 
         <div className="card">
           <div className="card-body text-center">
             <div className="mt-3 mb-4">
-              <CgProfile className='icon' style={{fontSize: "5rem"}}/>
+              <CgProfile className='icon'/>
             </div>
             <h4 className="mb-2">{auth?.user?.name}</h4>
             <p className="text-muted mb-4">Lab Assistant [CSE] <span class="mx-2">|</span> Kiit University <span class="mx-2">|</span> +91 9999991111

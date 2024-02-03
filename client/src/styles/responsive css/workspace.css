@@ -1,0 +1,64 @@
+
+.Problem-Statement{
+    h5{
+        margin: 10px 10px;
+    }
+    p{
+        margin: 10px 10px;
+        font-size: 15px;
+        font-weight:500;
+    }
+    #input{
+        font-weight: 700;
+        font-size: 15px;
+    }
+    #output{
+        font-weight: 700;
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:800px){
+    .Problem-Statement {
+        float: none;
+        width: 100%;
+        height: max-content;
+    
+    }
+    .Input{
+        float: none;
+        width: 100%;
+        margin-bottom: 1rem;
+        
+    }
+    .Output {
+        float: inline-start;
+        width: 100%;
+        display: block;
+        
+        height: 18rem;
+    }
+   .workspace-container{
+    margin-bottom: 5rem;
+    height: 100%;
+   }
+   .status-code{
+    font-size:12px;
+    margin: 10px 9px;
+    }
+        
+}
+.Input{
+    margin-top: 1rem;
+}
+.Output {
+    margin-top: 1.5rem;
+    display: block;
+    
+    height:21rem
+}
+.Problem-Statement{
+    height: 80vh;
+    overflow: hidden;
+    padding: 5px;
+    
+}

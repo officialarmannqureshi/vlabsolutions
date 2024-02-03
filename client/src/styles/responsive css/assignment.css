@@ -1,0 +1,51 @@
+@media screen and (max-width:1000px){
+    .assignment-title{
+        font-size: 9px;
+       }
+    .assignment-status{
+        font-size: 7px;
+    }
+    .assign-dashboard{
+        width: 25%;
+       
+    }
+    .assign-dashboard-3 {
+        width: 25%;
+        
+    }
+    .assignment-small-container-1{
+        a{
+            .assignment-name{
+                font-size: 10px;
+            }
+            
+        }
+        position: relative;
+    }
+    .assignment-small-container-2{
+        position: absolute;
+        
+    }
+    .row .assignment-date{
+        font-size: 7px;
+    }
+    .row .assignment-small-container-2{
+        left:1rem;
+        flex-direction: column;
+    }
+    .assignment-small-container-2 .assignment-status{
+        font-size: 7px;
+        min-width: 40px;
+    }
+    .assignment-small-container-2 .assignment-download{
+        font-size: 7px;
+        min-width: 40px;
+    }
+    .assignments-detail-container .row{
+        width: 92%;
+    }
+    .assignments-detail-container{
+        left:0;
+        margin: 0.5rem 0.55rem;
+    }
+}

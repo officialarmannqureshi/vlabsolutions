@@ -7,17 +7,17 @@
    
 }
 .scroll{
-    margin: 4px, 4px;
     padding: 4px;
     border: 1px solid rgb(64, 64, 64);
     width: auto;
-    height: 280px;
+    height:fit-content;
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify;  
-    margin: 5px;
+    margin: 10px;
     border-radius: 5px; 
     background-color: rgb(224, 251, 233);
+    margin-bottom: 2rem;
 }
 .news-header{
     margin-top: 30px;

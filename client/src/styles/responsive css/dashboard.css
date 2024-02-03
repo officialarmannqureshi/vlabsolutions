@@ -1,0 +1,122 @@
+@media screen and (min-width:500px){
+    .icon{
+        font-size: 1.6rem;
+    }
+    .mb-4 {
+        margin-bottom: 0.5rem!important;
+    }
+    
+    .mt-3 {
+        margin-top: 0.5rem!important;
+    }
+    .align-items-center{
+        width: 100%;
+       
+    }
+    .list-group{
+        display: flex;
+        flex-direction:row;
+         padding: 2px;
+         font-size: 0.85rem;
+         height: 2.5rem;
+         
+         
+         .list-group-item{
+             
+             padding: 7px 14px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+         }
+     }
+     .dashboard-menu{
+        margin-bottom: 0.85rem;
+    }
+    .list-group-item+.list-group-item{
+        border-top-width: thin;
+        border-radius: 0;
+    }
+    .list-group-item:first-child{
+        border-radius: 0;
+    }
+    .footer-box{
+        h4{
+            font-size: 1.2rem;
+        }
+    }
+    
+}
+.card{
+    width:80vw;
+}
+.list-group{
+    width: 80%;
+}
+.container-dashboard{
+        
+    display: grid;
+  place-items: center;
+  justify-content: center;
+}
+
+    
+
+
+
+@media screen and (max-width:500px){
+    .list-group{
+       display: flex;
+       flex-direction:row;
+        
+        font-size: 9.5px;
+        height: 2.2rem;
+        
+        
+        .list-group-item{
+            
+            padding: 4px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .dashboard-menu{
+        margin-bottom: 0.85rem;
+    }
+    .list-group-item+.list-group-item{
+        border-top-width: thin;
+        border-radius: 0;
+    }
+    .list-group-item:first-child{
+        border-radius: 0;
+    }
+    .dashboard-details{
+        font-size: 10px;
+        width: 100%;
+        height: auto;
+        .mb-4 {
+            margin-bottom: 0rem!important;
+        }
+        .mt-3 {
+            margin-top: 0rem!important;
+        }
+        .icon {
+            margin-bottom: 0px;
+            font-size: 1rem;
+        }
+    }
+    .align-items-center{
+        width: 100%;
+        
+    }
+    .dashboard-details-inside{
+        width: 97vw;
+    }
+    .container-dashboard{
+        
+        display: grid;
+      place-items: center;
+      justify-content: center;
+    }
+    
+}

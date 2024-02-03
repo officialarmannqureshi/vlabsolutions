@@ -1,0 +1,62 @@
+.student-container{
+    margin-top: 1rem;
+}
+.student-bulk-upload{
+    width: auto;
+    padding: 0 0; 
+
+}
+
+@media screen and (max-width:500px) {
+    .font-adjust{
+        font-size: 3px;
+        .card-body{
+            padding: 2px 2px;
+           p{
+            text-align: justify;
+  text-justify: auto;
+           }
+            h5{
+                font-size: 5px;
+            }
+        }
+    }
+    .student-bulk-upload{
+        .drop-text{
+            margin-top: 5px;
+            font-size: 11px;
+        }
+        .input-file{
+            font-size: 5px;
+            width: 100%;
+        }
+    }
+    
+}
+
+
+@media screen and (min-width:500px) {
+    .font-adjust{
+        font-size: 6px;
+        .card-body{
+            padding: 7px 7px;
+            p{
+                text-align: justify;
+  text-justify: auto;
+            }
+            h5{
+                font-size: 12px;
+            }
+        }
+    }
+    .student-bulk-upload{
+        .drop-text{
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .input-file{
+            font-size: 8px;
+            width: 100%;
+        }
+    }
+}
