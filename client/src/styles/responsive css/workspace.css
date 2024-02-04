@@ -49,10 +49,10 @@
 }
 
 .Output {
- 
+    font-size: 11px;
     display: block;
     
-    height:16rem;
+    height:12rem;
 }
 .Problem-Statement{
     height: 80vh;
@@ -61,5 +61,5 @@
     
 }
 .editor{
-    height:21rem;
+    height:14rem;
 }
