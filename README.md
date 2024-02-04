@@ -82,24 +82,19 @@ The application should now be running locally on `http://localhost:3000/`.
 
 ## Technologies Used
 
-- Frontend: HTML,CSS,Javascript,React
-- Backend: Node.js, Express.js ,JWT Authentication, File Upload using Multer and Excel (csv to json) to MongoDB using csvtojson module,Judge0 IDE and Compiler API.
+- Frontend: HTML, CSS, Javascript, React (Responsive web app)
+- Backend: Node.js, Express.js, REST API, JWT Authentication, Appwrite Cloud Storage, and Excel (CSV to JSON) to MongoDB using csvtojson module, Judge0 IDE and Compiler API.
 - Database: MongoDB
   
 ## Screenshots
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/68e98af7-1025-4748-be7a-c0c87c0e5dc2">
-
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/023c8615-f977-4eaf-b471-657546c87c5d">
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/49f93f05-6287-41fd-83df-3c0fe2c02b8e">
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/f92570de-f15f-49bc-96c7-23b53af08441"><br>
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/1630a2fe-8088-4941-a1c8-9c15b1df2ce7">
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/a7926bbd-e177-4597-ae12-911111768ea9">
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/c7fc52a7-8cd9-495e-a8ed-1f4b8dd087a8">
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/25e2aba5-9c45-441f-9186-9f581cb9d6c0">
-
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/1470130a-2e74-4f85-8cbb-8fa5ab0c2219">
-
-
-
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/f92570de-f15f-49bc-96c7-23b53af08441">
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/f8ac5a8a-176b-4de7-af98-abe7bee399a3">
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/607050ea-9928-4da5-a5ed-6459cad0c217">
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/0bcaaffb-6692-456f-937a-df74c941560b">
+<img width="944" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/ea1648f1-ffdc-4a6d-9ad1-0d5bb5d75f4a">
+<img width="947" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/bd15b641-17e5-4acb-9bc7-03726fe79bb1">
 ## Contributing
 
 Contributions to Vlab Solutions are welcome! If you find any issues or have suggestions for improvements, please feel free to create a pull request or raise an issue.
