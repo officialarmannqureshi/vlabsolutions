@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import Layout from '../../components/Layouts/Layout';
-import axios from 'axios';
 import '../../styles/responsive css/assignment.css'
-import { baseUrl } from "../../private";
+
+import axios from 'axios';
+import React, {useEffect, useState} from 'react'
+
+import Layout from '../../components/Layouts/Layout';
+import {baseUrl} from "../../private";
+
 // import { NavLink } from 'react-router-dom';
 const Assignment = () => {
     const [assignmentData, setAssignmentData] = useState(null);

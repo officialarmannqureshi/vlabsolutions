@@ -1,30 +1,33 @@
-import React, { useState, useRef } from "react";
-import Layout from "../../components/Layouts/Layout";
+import "../../styles/responsive css/workspace.css";
+
 import Editor from "@monaco-editor/react";
 import axios from "axios";
-import "../../styles/responsive css/workspace.css";
-import { data } from "../../problem";
+import React, {useRef, useState} from "react";
+
+import Layout from "../../components/Layouts/Layout";
+import {data} from "../../problem";
+
 const files = {
-  71: {
-    name: "program.py",
-    language: "python",
-    value: "Write your Python program here",
+  71 : {
+    name : "program.py",
+    language : "python",
+    value : "Write your Python program here",
   },
-  54: {
-    name: "program.cpp",
-    language: "cpp",
-    value: "Write your C++ program here",
+  54 : {
+    name : "program.cpp",
+    language : "cpp",
+    value : "Write your C++ program here",
   },
-  50: {
-    name: "program.c",
-    language: "c",
-    value: "Write your C program here",
+  50 : {
+    name : "program.c",
+    language : "c",
+    value : "Write your C program here",
   },
 
-  62: {
-    name: "program.java",
-    language: "java",
-    value: "Write your Java program here",
+  62 : {
+    name : "program.java",
+    language : "java",
+    value : "Write your Java program here",
   },
 };
 
