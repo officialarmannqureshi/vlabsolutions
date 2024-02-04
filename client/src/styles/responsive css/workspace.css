@@ -45,20 +45,21 @@
     font-size:12px;
     margin: 10px 9px;
     }
-        
+   
 }
-.Input{
-    margin-top: 1rem;
-}
+
 .Output {
-    margin-top: 1.5rem;
+ 
     display: block;
     
-    height:21rem
+    height:16rem;
 }
 .Problem-Statement{
     height: 80vh;
     overflow: hidden;
     padding: 5px;
     
+}
+.editor{
+    height:21rem;
 }

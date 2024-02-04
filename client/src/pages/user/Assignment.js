@@ -74,13 +74,7 @@ const Assignment = () => {
     countPendingObjects(AssignmentDetails);
     const totalPending = count;
     const totalSubmitted=submitcount;
-    /* Handle Status button */
-    // const handleStatus= (event)=>{
-
-    // }
-
-    /* Date format to DD/MM/YYYY */
-
+    
     function formatDate(isoDate){
         const options= {day:'numeric',month:'long',year:'numeric'};
         return new Date(isoDate).toLocaleString(undefined, options);
