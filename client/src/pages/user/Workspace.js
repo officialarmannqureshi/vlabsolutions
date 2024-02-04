@@ -154,7 +154,15 @@ const Workspace = () => {
         
       </div>
       <div className="Input">
-          
+      <div className="editor">
+            <Editor
+              theme="vs-dark"
+              onMount={handleEditorDidMount}
+              path={files[fileID].name}
+              language={files[fileID].language}
+              defaultValue={files[fileID].value}
+            />
+          </div>
           <div className="Input-in-down">
             <button
               type="button"
