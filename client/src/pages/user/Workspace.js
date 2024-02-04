@@ -2,39 +2,39 @@ import "../../styles/responsive css/workspace.css";
 
 import Editor from "@monaco-editor/react";
 import axios from "axios";
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 
 import Layout from "../../components/Layouts/Layout";
-import {data} from "../../problem";
+import { data } from "../../problem";
 
 const files = {
-  71 : {
-    name : "program.py",
-    language : "python",
-    value : "Write your Python program here",
+  71: {
+    name: "program.py",
+    language: "python",
+    value: "Write your Python program here",
   },
-  54 : {
-    name : "program.cpp",
-    language : "cpp",
-    value : "Write your C++ program here",
+  54: {
+    name: "program.cpp",
+    language: "cpp",
+    value: "Write your C++ program here",
   },
-  50 : {
-    name : "program.c",
-    language : "c",
-    value : "Write your C program here",
+  50: {
+    name: "program.c",
+    language: "c",
+    value: "Write your C program here",
   },
 
-  62 : {
-    name : "program.java",
-    language : "java",
-    value : "Write your Java program here",
+  62: {
+    name: "program.java",
+    language: "java",
+    value: "Write your Java program here",
   },
 };
 
 const Workspace = () => {
   const [fileID, setFileID] = useState(54); // Default to Python
   const [problemIndex, setProblemIndex] = useState(
-    Math.floor(Math.random() * data.length)
+    Math.floor(Math.random() * data.length),
   );
   const selectedProblem = data[problemIndex];
   const [UserInput, setUserInput] = useState("");
@@ -65,7 +65,7 @@ const Workspace = () => {
             "X-RapidAPI-Key": process.env.REACT_APP_JUDGE0IDE_API, // Replace with your RapidAPI Key
             "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
           },
-        }
+        },
       );
 
       if (response.status !== 201) {
@@ -133,31 +133,28 @@ const Workspace = () => {
   return (
     <Layout title="Workspace - Vlab Solutions">
       <div className="workspace-container">
-      <div className="Problem-Container">
-        <div className="Problem-Statement">
-        
-          <h5>{selectedProblem.problem_no } : {selectedProblem.title}</h5>
-       
-          
-          <p  className="problem-desc">{selectedProblem.desc}</p>
-          {/* Display input */}
-          <p id="input">Input:</p>
-          <p>{JSON.stringify(selectedProblem.input)}</p>
+        <div className="Problem-Container">
+          <div className="Problem-Statement">
+            <h5>
+              {selectedProblem.problem_no} : {selectedProblem.title}
+            </h5>
 
-          {/* Display output */}
-          <p id="output">Output:</p>
-          {Array.isArray(selectedProblem.output) ? (
-            <pre>{JSON.stringify(selectedProblem.output, null, 2)}</pre>
-          ) : (
-            <p>{selectedProblem.output}</p>
-          )}
+            <p className="problem-desc">{selectedProblem.desc}</p>
+            {/* Display input */}
+            <p id="input">Input:</p>
+            <p>{JSON.stringify(selectedProblem.input)}</p>
+
+            {/* Display output */}
+            <p id="output">Output:</p>
+            {Array.isArray(selectedProblem.output) ? (
+              <pre>{JSON.stringify(selectedProblem.output, null, 2)}</pre>
+            ) : (
+              <p>{selectedProblem.output}</p>
+            )}
+          </div>
         </div>
-
-        
-        
-      </div>
-      <div className="Input">
-      <div className="editor">
+        <div className="Input">
+          <div className="editor">
             <Editor
               theme="vs-dark"
               onMount={handleEditorDidMount}
@@ -196,7 +193,7 @@ const Workspace = () => {
             </select>
           </div>
         </div>
-      <div className="Output">
+        <div className="Output">
           <div className="User-input">
             <p className="User-input-title">User Input</p>
 
