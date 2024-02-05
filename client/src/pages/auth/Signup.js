@@ -1,37 +1,36 @@
-import React,{useState} from 'react'
-import Layout from '../../components/Layouts/Layout'
-import toast from 'react-hot-toast';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { baseUrl } from '../../private';
-const Register = () => {
-  
-  const [id,setRollno] = useState("")
-  const [name,setName] = useState("")
-  const [password,setPassword] = useState("")
-  const [email,setEmail] = useState("")
-  const navigate=useNavigate();
+import React, {useState} from 'react'
+import toast from 'react-hot-toast';
+import {useNavigate} from 'react-router-dom';
+
+import Layout from '../../components/Layouts/Layout'
+import {baseUrl} from '../../private';
+
+const Register =
+    () => {
+      const [id, setRollno] = useState("")
+      const [name, setName] = useState("")
+      const [password, setPassword] = useState("")
+      const [email, setEmail] = useState("")
+      const navigate = useNavigate();
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
     console.log(process.env.REACT_APP_API);
     try {
-      const res = await axios.post(
-      baseUrl+"/api/v1/auth/register/",
-      {
+      const res = await axios.post(baseUrl + "/api/v1/auth/register/", {
         id,
         name,
         password,
         email,
       });
-      if(res.data.success){
+      if (res.data.success) {
         toast.success(res.data.message);
         navigate('/login');
-      }
-      else{
+      } else {
         toast.error(res.data.message);
       }
-      
+
     } catch (error) {
       console.log('error occurred..');
       console.log(error);
@@ -53,7 +52,8 @@ const Register = () => {
 
   <div className="mb-3">
     <label for="exampleInputName" className="form-label">Full Name</label>
-    <input type="text" onChange={(e)=>setName(e.target.value)} class="form-control" id="exampleInputName" placeholder='Enter your full name' value={name} required/>
+    <input type="text" onChange={
+    (e) => setName(e.target.value)} class="form-control" id="exampleInputName" placeholder='Enter your full name' value={name} required/>
 
   </div>
   <div className="mb-3">
@@ -72,6 +72,6 @@ const Register = () => {
       </Layout>
     </div>
   )
-}
+    }
 
 export default Register

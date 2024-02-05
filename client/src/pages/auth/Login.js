@@ -1,44 +1,43 @@
+import axios from 'axios';
 import React from 'react'
-import Layout from '../../components/Layouts/Layout'
 import {useState} from 'react'
 import toast from 'react-hot-toast';
-import axios from 'axios';
-import { useNavigate,useLocation } from 'react-router-dom';
-import { useAuth } from '../../context/auth';
-import { baseUrl } from '../../private';
-const Login = () => {
-  
-  const [id,setRollno] = useState("")
-  const [password,setPassword] = useState("")
-  const [auth,setAuth]=useAuth();
-  const navigate=useNavigate();
-  const location = useLocation();
+import {useLocation, useNavigate} from 'react-router-dom';
+
+import Layout from '../../components/Layouts/Layout'
+import {useAuth} from '../../context/auth';
+import {baseUrl} from '../../private';
+
+const Login =
+    () => {
+      const [id, setRollno] = useState("")
+      const [password, setPassword] = useState("")
+      const [auth, setAuth] = useAuth();
+      const navigate = useNavigate();
+      const location = useLocation();
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
     console.log(process.env.REACT_APP_API);
     try {
-      const res = await axios.post(
-      baseUrl+'/api/v1/auth/login/',
-      {
+      const res = await axios.post(baseUrl + '/api/v1/auth/login/', {
         id,
         password,
-        
+
       });
-      if(res.data.success){
+      if (res.data.success) {
         toast.success(res.data.message);
         setAuth({
           ...auth,
-          user:res.data.user,
-          token:res.data.token,
+          user : res.data.user,
+          token : res.data.token,
         });
-        localStorage.setItem('auth',JSON.stringify(res.data));
+        localStorage.setItem('auth', JSON.stringify(res.data));
         navigate(location.state || '/');
-      }
-      else{
+      } else {
         toast.error(res.data.message);
       }
-      
+
     } catch (error) {
       console.log('error occurred..');
       console.log(error);
@@ -68,6 +67,6 @@ const Login = () => {
       </Layout>
     </div>
   )
-}
+    }
 
 export default Login
