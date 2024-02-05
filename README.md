@@ -1,6 +1,8 @@
 # Deployed on Vercel
 https://vlabsolutions-client.vercel.app/login
-Note :- Rollno:test123 and Password:123
+Note :- 
+For User : Rollno:test123 and Password:123
+For Admin: Rollno:admin and Password:123
 
 # Vlab Solutions
 
