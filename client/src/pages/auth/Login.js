@@ -52,8 +52,8 @@ const Login = () => {
          
          <form onSubmit={handleSubmit} className='form-box form-box-login'>
          <div className="mb-3">
-   <label for="exampleInputRoll" className="form-label">Roll Number</label>
-   <input type="text" onChange={(e)=>setRollno(e.target.value)} class="form-control" id="exampleInputRoll" placeholder='Enter your roll Number' value={id} required/>
+   <label for="exampleInputRoll" className="form-label">Institution ID</label>
+   <input type="text" onChange={(e)=>setRollno(e.target.value)} class="form-control" id="exampleInputRoll" placeholder='Enter your institution ID' value={id} required/>
    
  </div>
 

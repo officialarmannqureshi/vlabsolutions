@@ -45,8 +45,8 @@ const Register = () => {
          
           <form onSubmit={handleSubmit} className='form-box'>
           <div className="mb-3">
-    <label for="exampleInputRoll" className="form-label">Roll Number</label>
-    <input type="text" onChange={(e)=>setRollno(e.target.value)} class="form-control" id="exampleInputRoll" placeholder='Enter your roll Number' value={id} required/>
+    <label for="exampleInputRoll" className="form-label">Institution ID</label>
+    <input type="text" onChange={(e)=>setRollno(e.target.value)} class="form-control" id="exampleInputRoll" placeholder='Enter your institution ID' value={id} required/>
     
   </div>
 
@@ -65,10 +65,7 @@ const Register = () => {
     <label for="exampleInputPassword1" className="form-label">Password</label>
     <input type="password" class="form-control" onChange={(e)=>setPassword(e.target.value)}  id="exampleInputPassword1" placeholder='Enter password' value={password} required/>
   </div>
-  <div className="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-    <label class="htmlForm-check-label" for="exampleCheck1">Check me out</label>
-  </div>
+  
   <button type="submit" className="btn btn-primary">Submit</button>
 </form>
         </div>
