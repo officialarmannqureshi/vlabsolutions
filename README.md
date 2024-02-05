@@ -90,8 +90,8 @@ The application should now be running locally on `http://localhost:3000/`.
   
 ## Screenshots
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/023c8615-f977-4eaf-b471-657546c87c5d">
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/49f93f05-6287-41fd-83df-3c0fe2c02b8e">
-<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/f92570de-f15f-49bc-96c7-23b53af08441">
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/d2e68f27-5d8e-4e70-99b4-ff507459af5f">
+<img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/3c62ad05-e198-4d6e-a840-c23259a08e5b">
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/f8ac5a8a-176b-4de7-af98-abe7bee399a3">
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/607050ea-9928-4da5-a5ed-6459cad0c217">
 <img width="400" alt="image" src="https://github.com/officialarmannqureshi/vlabsolutions/assets/91754196/0bcaaffb-6692-456f-937a-df74c941560b">
