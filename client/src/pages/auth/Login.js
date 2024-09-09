@@ -47,6 +47,10 @@ const Login = () => {
   }
   return (
     <div>
+      <div>
+          For User : ID:test123 and Password:123
+          For Admin: ID:admin and Password:123
+      </div>
       <Layout title={"Login-Vlabs"}>
       <div className='container-box'>
          
