@@ -80,7 +80,7 @@ const AdminCreateQuiz = ({ formDetails }) => {
     console.log("Sanitized Quiz Data:", sanitizedQuizData);
     
     try {
-      const res = await axios.post("/api/v1/auth/quizData/", finalQuizData);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/auth/quizData/`, finalQuizData);
       if (res.data.success) {
         toast.success(res.data.message);  
         navigate(`/admin/create-quiz/`)

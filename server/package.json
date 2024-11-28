@@ -4,7 +4,6 @@
   "description": "A comprehensive solution for the virtual labs",
   "main": "index.js",
   "type": "module",
-  "proxy": "http://localhost:3000",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js",

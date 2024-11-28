@@ -1,12 +1,9 @@
 import express from "express";
-import colors from "colors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./src/config/db.js";
 import authRoutes from "./src/routers/authRoute.js";
 import cors from "cors";
-import createProxyMiddleware from "http-proxy-middleware";
-
 
 //configure env
 dotenv.config();
@@ -17,31 +14,27 @@ connectDB();
 //rest object
 const app = express();
 
-// app.use(cors({
-//   origin: "*",
-//   methods: ["GET", "POST", "PUT"], 
-// }));
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT"],
+}));
 // app.use(cors());
 
 //added for deployment
-app.use(cors(
-  {
-      origin: ["https://vlabsolutions-client.vercel.app"],
-      methods: ["POST", "GET"],
-      credentials: true
-  }
-));
+// app.use(
+//   cors({
+//     origin: "*",
+//   })
+// );
 
 app.use(express.json());
 app.use(morgan("dev"));
 
-
 //routes
 app.use("/api/v1/auth", authRoutes);
-app.use("/",(req,res)=>{
+app.use("/", (req, res) => {
   res.send(`<h1>Welcome to the Auth Server #2</h1>`);
-})
-
+});
 
 //PORT
 const PORT = process.env.PORT || 8080;
