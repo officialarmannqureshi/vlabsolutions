@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: "*",
+  origin: "https://vlabsolutions-frontend.vercel.app",
   methods: ["GET", "POST", "PUT"],
 }));
 // app.use(cors());
