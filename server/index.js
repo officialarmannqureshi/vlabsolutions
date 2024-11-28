@@ -18,7 +18,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: "https://vlabsolutions-client.vercel.app/",
+  origin: "*",
   methods: ["GET", "POST", "PUT"],  // Change the semicolon to a comma here
 }));
 
