@@ -21,12 +21,16 @@ const app = express();
 //   origin: "*",
 //   methods: ["GET", "POST", "PUT"], 
 // }));
-app.use(cors());
+// app.use(cors());
 
 //added for deployment
-app.use(cors({
-  origin: '*'  //to be changed later to vercel url
-}));
+app.use(cors(
+  {
+      origin: ["https://vlabsolutions-client.vercel.app","localhost:3000"],
+      methods: ["POST", "GET"],
+      credentials: true
+  }
+));
 
 app.use(express.json());
 app.use(morgan("dev"));
@@ -35,7 +39,7 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/",(req,res)=>{
-  res.send(`<h1>Welcome to the Auth Server</h1>`);
+  res.send(`<h1>Welcome to the Auth Server #2</h1>`);
 })
 
 
