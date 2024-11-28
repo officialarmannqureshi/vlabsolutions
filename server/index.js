@@ -26,7 +26,7 @@ const app = express();
 //added for deployment
 app.use(cors(
   {
-      origin: ["https://vlabsolutions-client.vercel.app","localhost:3000"],
+      origin: ["https://vlabsolutions-client.vercel.app"],
       methods: ["POST", "GET"],
       credentials: true
   }
