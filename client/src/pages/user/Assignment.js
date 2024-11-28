@@ -9,7 +9,7 @@ const Assignment = () => {
 
   const fetchData1 = async () => {
     try {
-      const response = await axios.get(`/api/v1/auth/getallassignments`);
+      const response = await axios.get(`api/v1/auth/getallassignments`);
       setAssignmentData(response.data);
       console.log(assignmentData);
       setLoading(false);

@@ -17,7 +17,7 @@ const AdminStudent = () => {
 
   useEffect(() => {
     const fetchInfo = () => {
-      return axios.get(`/api/v1/auth/getall/`).then((res) => setData(res.data));
+      return axios.get(`api/v1/auth/getall/`).then((res) => setData(res.data));
     };
     fetchInfo();
   }, []);
@@ -61,7 +61,7 @@ const AdminStudent = () => {
       };
 
       axios
-        .post(`/api/v1/auth/uploadall/`, data)
+        .post(`api/v1/auth/uploadall/`, data)
         .then((response) => {
           console.log(response.data);
         })

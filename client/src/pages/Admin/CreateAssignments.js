@@ -51,7 +51,7 @@ const CreateAssignments = () => {
      
 
       // Send data to the backend API
-      await axios.post(`/api/v1/auth/create-assignment`, formData);
+      await axios.post(`api/v1/auth/create-assignment`, formData);
 
       // Display success message
       document.getElementById('onsubmitted').innerHTML = 'File uploaded successfully';
