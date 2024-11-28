@@ -13,14 +13,14 @@ const AdminDashboard = () => {
     const [data, setData] = useState([]);
 
   const fetchInfo = () => {
-    return axios.get(`${process.env.REACT_APP_API_URL}/api/v1/auth/getall/`).then((res) => setData(res.data));
+    return axios.get(`/api/v1/auth/getall/`).then((res) => setData(res.data));
   };
 
 
   const [assignmentdata, setAssignmentData] = useState([]);
 
   const fetchAssignmentInfo = () => {
-    return axios.get(`${process.env.REACT_APP_API_URL}/api/v1/auth/getallassignments/`).then((res) => setAssignmentData(res.data));
+    return axios.get(`/api/v1/auth/getallassignments/`).then((res) => setAssignmentData(res.data));
   };
 
   useEffect(() => {

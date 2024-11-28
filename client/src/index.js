@@ -9,10 +9,12 @@ import App from "./App.js";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./context/auth";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AuthProvider>
     <BrowserRouter>
+     
       <App />
     </BrowserRouter>
   </AuthProvider>

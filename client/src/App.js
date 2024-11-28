@@ -23,12 +23,13 @@ import AdminCreateQuizForm from "./pages/Admin/AdminCreateQuizForm";
 import AdminCreateQuiz from "./pages/Admin/AdminCreateQuiz";
 import AdminCreateQuizFormOutlet from "./pages/Admin/AdminCreateQuizFormOutlet";
 import Tests from "./pages/user/Tests";
-
+import axios from 'axios'
 function App() {
   const [formDetails, setFormDetails] = useState({});
-
+  axios.defaults.withCredentials=true;
   return (
     <div className="App">
+      
       <Routes>
         <Route path="/" element={<PrivateRoute />}>
           <Route index element={<HomePage />} />
