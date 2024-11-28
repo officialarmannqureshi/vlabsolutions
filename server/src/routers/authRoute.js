@@ -19,7 +19,7 @@ router.post('/login',loginController);
 
 //route for create Assignments
 
-router.post('/create-assignment',addFileController);
+router.post('/create-assignment',RequireSignIn,isAdmin,addFileController);
 
 // test route for JWT
 
@@ -37,17 +37,17 @@ router.get('/admin-auth',RequireSignIn,isAdmin,(req,res)=>{
 
 // for admin/students -to upload students details to DB
 
-router.post('/uploadall',student_file_controller);
+router.post('/uploadall',RequireSignIn,isAdmin,student_file_controller);
 
 
 //to getting all student's details
 
-router.get('/getall',student_file_get_controller);
+router.get('/getall',RequireSignIn,isAdmin,student_file_get_controller);
 
-router.get('/getallassignments',getassignmentController);
+router.get('/getallassignments',RequireSignIn,getassignmentController);
 
 // route for quizDetails
 
-router.post('/quizData',quizController);
+router.post('/quizData',RequireSignIn,quizController);
 
 export default router;
