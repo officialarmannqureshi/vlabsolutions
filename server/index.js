@@ -25,7 +25,7 @@ app.use(cors());
 
 //added for deployment
 app.use(cors({
-  origin: ''  //to be changed later to vercel url
+  origin: 'https://vlabsolutions-ddva.vercel.app/'  //to be changed later to vercel url
 }));
 
 app.use(express.json());
