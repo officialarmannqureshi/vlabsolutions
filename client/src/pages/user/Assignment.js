@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layouts/Layout";
 import axios from "axios";
 // import { NavLink } from 'react-router-dom';
+
 const Assignment = () => {
   const [assignmentData, setAssignmentData] = useState(null);
   const [loading, setLoading] = useState(true);
-  
+
   const fetchData1 = async () => {
     try {
       const response = await axios.get("/api/v1/auth/getallassignments");
@@ -78,20 +79,19 @@ const Assignment = () => {
   }
 
   function handleDownload(e) {
-    const filename = e.target.name;
-    const fileURL = `${process.env.PUBLIC_URL}/assignments/${filename}`;
+
     console.log(e.target.href);
     // const link = document.createElement('a');
     // link.href = fileURL;
     // link.download = filename;
     // link.click();
   }
-  
+
   return (
     <Layout title={"Assignment - Vlab Solutions"}>
       <div className="assignment-container-main">
         <div className="assignment-container mt-3">
-        <div className="assign-dashboard">
+          <div className="assign-dashboard">
             <p className="assignment-title">Total Assigned</p>
             <p className="assignment-total">{totalAssigned}</p>
             <p className="assignment-status">Last updated today</p>
@@ -117,7 +117,7 @@ const Assignment = () => {
                 <div className="row" key={index}>
                   <div className="assignment-small-container-1">
                     {/* <NavLink className="" activeClassName="is-active" to="/Workspace"> */}
-                    <a href="/assignments/C1_W1.pdf" target="_blank">
+                    <a target="_blank">
                       <p className="assignment-name">
                         {assignment["filename"]}
                       </p>
@@ -139,7 +139,7 @@ const Assignment = () => {
                     <a
                       className="assignment-download"
                       name={assignment["filename"]}
-                      href={`/assignments/${assignment["filename"]}`}
+                      href={`${assignment.path}`}
                       download={`/assignments/${assignment["filename"]}`}
                       onClick={handleDownload}
                     >

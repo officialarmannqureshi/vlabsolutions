@@ -42,7 +42,10 @@ const Login = () => {
   return (
     <div>
       <Layout title={"Login-Vlabs"}>
+      <div>For Admin : RollNo:admin Password:123</div>
+      <div>For Student : RollNo:21052804 Password:123</div>
         <div className="container-box">
+         
           <form onSubmit={handleSubmit} className="form-box form-box-login">
             <div className="mb-3">
               <label for="exampleInputRoll" className="form-label">

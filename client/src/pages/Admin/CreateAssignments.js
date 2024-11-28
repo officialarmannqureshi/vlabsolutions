@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import Layout from '../../components/Layouts/Layout';
 import { useAuth } from '../../context/auth';
 import axios from 'axios';
+import { Client, Storage, ID } from "appwrite";
 
 const CreateAssignments = () => {
   const [auth] = useAuth();
   const [file, setFile] = useState(null);
   const [assignment, setAssignment] = useState('');
 
+  // Initialize Appwrite Client
+  const client = new Client()
+    .setEndpoint(process.env.REACT_APP_APPWRITE_ENDPOINT) 
+    .setProject(process.env.REACT_APP_APPWRITE_PROJECT_ID); 
+    
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
@@ -16,27 +22,52 @@ const CreateAssignments = () => {
     setAssignment(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    document.getElementById('onsubmitted').innerHTML='File uploaded successfully';
-    setTimeout(()=>{
-      document.getElementById('onsubmitted').style.display='none';
-    },2000);
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('uploadedby', auth?.user?.name);
-    formData.append('assignment', assignment);
-    formData.append('id', auth?.user?.id);
 
-    axios
-      .post('/api/v1/auth/create-assignment/', formData)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error('Error in Axios POST request:', error);
-      });
+    const storage = new Storage(client);
+    const bucketId = process.env.REACT_APP_APPWRITE_BUCKET_ID; // Bucket ID from .env
+
+    try {
+      // Upload file to Appwrite Storage
+      const result = await storage.createFile(bucketId, ID.unique(), file);
+
+      const filename = result.name;
+      const fileId = result.$id;
+      const fileDownloadLink = storage.getFileDownload(bucketId, fileId);
+      
+    
+
+      // Prepare form data to send to the backend
+      const formData = {
+        path: fileDownloadLink,
+        filename: filename,
+        uploadedBy: auth?.user?.name || 'Anonymous',
+        assignment: assignment,
+        id: auth?.user?.id || 'Unknown',
+        status:'Pending'
+      };
+
+     
+
+      // Send data to the backend API
+      await axios.post(`/api/v1/auth/create-assignment`, formData);
+
+      // Display success message
+      document.getElementById('onsubmitted').innerHTML = 'File uploaded successfully';
+      setTimeout(() => {
+        document.getElementById('onsubmitted').style.display = 'none';
+      }, 2000);
+
+      // Clear the form
+      setFile(null);
+      setAssignment('');
+    } catch (error) {
+      console.error('Error uploading file:', error);
+      document.getElementById('onsubmitted').innerHTML = 'Error uploading file';
+    }
   };
+
 
   return (
     <Layout>

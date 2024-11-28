@@ -79,6 +79,7 @@
     margin: 11px 11px;
     
     height: auto;
+    position: relative;
     background-color: rgba(240, 240, 239, 0.705);
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -105,8 +106,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    left: 20rem;
+    position: absolute;
+    right: 5rem;
+    
 }   
 
 .row{
@@ -122,7 +124,7 @@
 
 .assignment-small-container-2 .assignment-status{
     color: #ffff;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: 500;
     border-radius: 40px;
     background-color: rgb(255, 164, 46);
@@ -134,12 +136,12 @@
     padding-right: 10px;
     padding-left: 10px;
     border-style: none;
-    min-width: 100px;
+    min-width: 80px;
     
 }
 .assignment-small-container-2 .assignment-download{
     color: #ffff;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: 500;
     border-radius: 40px;
     background-color: rgb(248, 56, 26);
@@ -154,6 +156,7 @@
     padding-right: 10px;
     padding-left: 10px;
     text-decoration: none;
+    min-width: 80px;
 }
 
 .assignment-small-container-2 .assignment-download:hover{

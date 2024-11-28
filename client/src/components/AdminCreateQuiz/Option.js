@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Option = ({ QuestionId, optionIndex, setQuestions, Questions }) => {
   function handleOptionInput(e) {
@@ -19,13 +19,9 @@ const Option = ({ QuestionId, optionIndex, setQuestions, Questions }) => {
   }
 
   function handleClick(e) {
-    
     const activeQuestionId = e.target.getAttribute("QuestionId");
     const activeOptionIndex = e.target.getAttribute("optionIndex");
-    const activeOptionValue = document.querySelector(
-      `input[optionId="${activeOptionIndex}"]`
-    ).value;
-    
+
     const allButtons = document.querySelectorAll(
       `.correct-answer[QuestionId="${activeQuestionId}"]`
     );

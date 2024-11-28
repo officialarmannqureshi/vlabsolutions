@@ -37,7 +37,7 @@ export const quizController = async (req, res) => {
       formDetails,
     }).save();
 
-    res.status(200).send({
+    res.status(201).send({
       success: true,
       message: "All questions are complete. Quiz successfully posted!",
       quizDetails,

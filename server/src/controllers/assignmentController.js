@@ -10,7 +10,8 @@ export const addFileController = async (req, res) => {
       });
     }
 
-    const { assignment, id, uploadedby,path,filename } = req.body;
+    const { assignment, id, uploadedBy,path,filename,status } = req.body;
+    
     // const { filename, mimetype, path } = req.file; // Destructure the file details
 
     // const filedetails = await new assignmentModel({
@@ -24,11 +25,12 @@ export const addFileController = async (req, res) => {
     const filedetails = await new assignmentModel({
       path,
       filename,
-      uploadedby,
+      uploadedBy,
       assignment,
       id,
+      status
     }).save();
-
+    
     res.status(201).send({
       success: true,
       message: "File uploaded successfully",

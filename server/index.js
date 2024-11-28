@@ -17,9 +17,15 @@ connectDB();
 //rest object
 const app = express();
 
+// app.use(cors({
+//   origin: "*",
+//   methods: ["GET", "POST", "PUT"], 
+// }));
+app.use(cors());
+
+//added for deployment
 app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT"],  // Change the semicolon to a comma here
+  origin: ''  //to be changed later to vercel url
 }));
 
 app.use(express.json());
