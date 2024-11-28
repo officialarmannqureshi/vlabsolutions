@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layouts/Layout';
+import { useAuth } from '../context/auth';
 import { newsData } from '../news';
 import './Home.css'
-import '../styles/responsive css/home.css'
 import { Link } from 'react-router-dom';
 const Home = () => {
-
+  const [auth]=useAuth();
   const news = newsData;
   return (
     <Layout title={"Home-Vlabs"} keywords={"C,C++,Python,University"}>
@@ -14,7 +14,7 @@ const Home = () => {
     {
       news.map((item)=>{
         let title=item.title
-        let desc=item.desc.substring(0,500)+'...  '
+        let desc=item.desc.substring(0,500)+'... '
         let postedDate=item.postedDate
         let url=item.url
         return(

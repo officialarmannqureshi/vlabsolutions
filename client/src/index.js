@@ -1,24 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import './styles/auth.css';
-import './styles/login.css';
-import './styles/admin.css';
-import './styles/user.css';
-import App from './App.js';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import "./styles/auth.css";
+import "./styles/login.css";
+import "./styles/admin.css";
+import "./styles/user.css";
+import App from "./App.js";
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from './context/auth';
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { AuthProvider } from "./context/auth";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AuthProvider>
-  <BrowserRouter>
-
-    <App />
-  
-  </BrowserRouter>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </AuthProvider>
-  
 );
 
 // If you want to start measuring performance in your app, pass a function

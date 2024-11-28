@@ -1,10 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../../styles/responsive css/home.css'
 const Footer = () => {
   return (
     <>
-    <div className='footer-box text-light p-3'>
+    <div className='footer-box text-light p-3' >
         <h4 className='text-center'>All right reserved &copy; Nazim Qureshi</h4>
     
     <p className='footer-menu mt-3 text-center'>

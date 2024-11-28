@@ -1,23 +1,45 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# .gitignore for the client
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Node.js dependencies
+/node_modules/
 
-# testing
-/coverage
+# Build output
+/dist/
+/build/
 
-# production
-/build
+# Dependency directories
+/.cache/
+/public/static/
 
-# misc
-.DS_Store
+# Environment files
+.env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*.local
 
+# Logs
+/logs/
+/*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+/.idea/
+
+# Coverage reports
+/coverage/
+
+# npm package lock
+package-lock.json
+yarn.lock
+
+# TypeScript compiled files
+*.tsbuildinfo
+*.d.ts
+
+# Client-side build output
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

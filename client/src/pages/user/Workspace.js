@@ -2,44 +2,41 @@ import React, { useState, useRef } from "react";
 import Layout from "../../components/Layouts/Layout";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
-import "../../styles/responsive css/workspace.css";
-import { data } from "../../problem";
+
 const files = {
-  71: {
+  "71": {
     name: "program.py",
     language: "python",
     value: "Write your Python program here",
   },
-  54: {
+  "54": {
     name: "program.cpp",
     language: "cpp",
     value: "Write your C++ program here",
   },
-  50: {
+  "50": {
     name: "program.c",
     language: "c",
     value: "Write your C program here",
   },
 
-  62: {
+  "62": {
     name: "program.java",
     language: "java",
     value: "Write your Java program here",
   },
+  
 };
 
 const Workspace = () => {
   const [fileID, setFileID] = useState(54); // Default to Python
-  const [problemIndex, setProblemIndex] = useState(
-    Math.floor(Math.random() * data.length)
-  );
-  const selectedProblem = data[problemIndex];
   const [UserInput, setUserInput] = useState("");
   const [outputText, setOutputText] = useState(""); // State to store the output
   const [ExecutionTime, setExecutionTime] = useState(""); // State to store the output
   const [Memory, setMemory] = useState(""); // State to store the output
-
+  
   const editorRef = useRef(null);
+
 
   async function handleSubmit() {
     try {
@@ -48,9 +45,9 @@ const Workspace = () => {
         alert("Please write a program before submitting.");
         return;
       }
-
+      
       const response = await axios.post(
-        "https://judge0-ce.p.rapidapi.com/submissions",
+        'https://judge0-ce.p.rapidapi.com/submissions',
         {
           source_code: program,
           stdin: UserInput,
@@ -58,9 +55,9 @@ const Workspace = () => {
         },
         {
           headers: {
-            "content-type": "application/json",
-            "X-RapidAPI-Key": process.env.REACT_APP_JUDGE0IDE_API, // Replace with your RapidAPI Key
-            "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': process.env.REACT_APP_JUDGE0IDE_API, // Replace with your RapidAPI Key
+            'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com',
           },
         }
       );
@@ -73,11 +70,11 @@ const Workspace = () => {
       const token = response.data.token;
       console.log(token);
       const options = {
-        method: "GET",
+        method: 'GET',
         url: `https://judge0-ce.p.rapidapi.com/submissions/${token}`,
         headers: {
-          "X-RapidAPI-Key": process.env.REACT_APP_JUDGE0IDE_API, // Replace with your RapidAPI Key
-          "X-RapidAPI-Host": "judge0-ce.p.rapidapi.com",
+          'X-RapidAPI-Key': process.env.REACT_APP_JUDGE0IDE_API, // Replace with your RapidAPI Key
+          'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com',
         },
       };
 
@@ -94,6 +91,7 @@ const Workspace = () => {
         try {
           const getSolution = await axios.request(options);
           jsonGetSolution = getSolution.data;
+          
         } catch (error) {
           console.error(error);
           alert("Error checking submission status.");
@@ -102,14 +100,17 @@ const Workspace = () => {
       }
       console.log(jsonGetSolution);
       if (jsonGetSolution.stdout) {
-        let result = jsonGetSolution.stdout;
-
+        
+        let result=jsonGetSolution.stdout;
+        
         setExecutionTime(jsonGetSolution.time);
-        setMemory(jsonGetSolution.memory + " Bytes");
+        setMemory(jsonGetSolution.memory+" Bytes");
 
-        setOutputText(`\n${result}\n`);
-        document.getElementById("status-in").innerHTML =
-          jsonGetSolution.status.description;
+        setOutputText(
+          `\n${result}\n`
+        );
+        document.getElementById("status-in").innerHTML=jsonGetSolution.status.description;
+       
       } else if (jsonGetSolution.stderr) {
         const error = jsonGetSolution.stderr;
         setOutputText(`Error: ${error}`);
@@ -129,32 +130,11 @@ const Workspace = () => {
 
   return (
     <Layout title="Workspace - Vlab Solutions">
-      <div className="workspace-container">
       <div className="Problem-Container">
-        <div className="Problem-Statement">
-        
-          <h5>{selectedProblem.problem_no } : {selectedProblem.title}</h5>
-       
+        <div className="Problem-Statement">Problem Statement</div>
+        <div className="Input">
           
-          <p  className="problem-desc">{selectedProblem.desc}</p>
-          {/* Display input */}
-          <p id="input">Input:</p>
-          <p>{JSON.stringify(selectedProblem.input)}</p>
-
-          {/* Display output */}
-          <p id="output">Output:</p>
-          {Array.isArray(selectedProblem.output) ? (
-            <pre>{JSON.stringify(selectedProblem.output, null, 2)}</pre>
-          ) : (
-            <p>{selectedProblem.output}</p>
-          )}
-        </div>
-
-        
-        
-      </div>
-      <div className="Input">
-      <div className="editor">
+          <div style={{ height: "85%" }}>
             <Editor
               theme="vs-dark"
               onMount={handleEditorDidMount}
@@ -164,58 +144,43 @@ const Workspace = () => {
             />
           </div>
           <div className="Input-in-down">
-            <button
-              type="button"
-              class="btn btn-success submit-code"
-              onClick={handleSubmit}
-            >
-              Execute
-            </button>
-            <button
-              type="button"
-              class="btn btn-success save-code"
-              onClick={handleSubmit}
-            >
-              Save
-            </button>
-            <p className="status-code" id="status-in">
-              Not submitted yet
-            </p>
-
-            <select
-              className="language-code"
-              onChange={(e) => setFileID(parseInt(e.target.value))}
-            >
-              <option value="54">C++</option>
-              <option value="50">C</option>
-              <option value="62">Java</option>
-              <option value="71">Python</option>
-            </select>
+          <button type="button" class="btn btn-success submit-code" onClick={handleSubmit}>Execute</button>
+          <button type="button" class="btn btn-success save-code" onClick={handleSubmit}>Save</button>
+          <p className="status-code" id="status-in">Not submitted yet</p>
+         
+          
+          <select className="language-code"onChange={(e) => setFileID(parseInt(e.target.value))}>
+            <option value="54">C++</option>
+            <option value="50">C</option>
+            <option value="62">Java</option>
+            <option value="71">Python</option>
+          </select>
           </div>
+
         </div>
-      <div className="Output">
-          <div className="User-input">
-            <p className="User-input-title">User Input</p>
-
-            <textarea
-              placeholder="Enter your input"
-              className="User-input-textarea"
-              onChange={(e) => setUserInput(e.target.value)}
-            ></textarea>
-          </div>
-
-          <div className="Output-in-right">
-            <p className="Output-title">Output</p>
-            <div className="output-in-container" id="output-id">
-              {outputText} <br />
-              <h6>Execution Time:</h6>
-              {ExecutionTime}
-              <h6>Memory Used:</h6>
-              {Memory}
-              <br />
+        <div className="Output">
+          
+            <div className="User-input">
+              <p className="User-input-title">User Input</p>
+            
+      
+            <textarea placeholder="Enter your input" className="User-input-textarea" onChange={(e) => setUserInput(e.target.value)}></textarea>
             </div>
+        
+
+            <div className="Output-in-right">
+                <p className="Output-title">Output</p>
+                  <div className="output-in-container" id="output-id">
+                    {outputText} <br/>
+                    <h6>Execution Time:</h6>
+                    {ExecutionTime} 
+                    <h6>Memory Used:</h6>
+                    {Memory}<br/>
+                    
+                  </div>
+            </div>
+          
           </div>
-        </div>
       </div>
     </Layout>
   );

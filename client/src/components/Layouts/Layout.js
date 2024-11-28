@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 const Layout = ({children,title,description,keywords,author}) => {
   return (
-    <div>
+    <div className=''>
       <Helmet>
                 <meta charSet="utf-8" />
           

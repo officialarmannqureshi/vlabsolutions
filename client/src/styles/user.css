@@ -1,7 +1,9 @@
 /*    Assignments */
 .assignment-container-main{
     font-family: 'DM Sans','Poppins';
-    
+    font-size: 15px;
+    height: auto;
+    width: auto;
 }
 .assign-dashboard{
     border-radius: 6px;
@@ -24,10 +26,7 @@
     border: solid 1.4px rgb(229, 229, 229);
     height: 5rem;
     width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
@@ -72,13 +71,14 @@
     border: solid 1.4px rgb(229, 229, 229);
     height: auto;
     width: 95%;
+    margin-bottom: 3rem;
 }
 .assignments-detail-container .row{
     border-radius: 8px;
     width: 98%;
     margin: 11px 11px;
     
-    height: 4rem;
+    height: auto;
     background-color: rgba(240, 240, 239, 0.705);
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;

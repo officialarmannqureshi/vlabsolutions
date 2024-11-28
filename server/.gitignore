@@ -1,0 +1,41 @@
+# .gitignore for the server (backend) folder
+
+# Node.js dependencies
+/node_modules/
+
+# Logs
+/logs/
+/*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+/tmp/
+*.swp
+
+# Coverage reports
+/coverage/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+/.idea/
+
+# Database files
+*.sqlite
+*.db
+
+# npm package lock
+package-lock.json
+yarn.lock
+
+# Server-side build output
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

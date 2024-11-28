@@ -4,7 +4,7 @@ import { RequireSignIn, isAdmin} from '../middleware/authMiddleware.js';
 import {addFileController,getassignmentController } from '../controllers/assignmentController.js';
 
 import { student_file_controller,student_file_get_controller } from '../controllers/student_file_controller.js';
-
+import { quizController } from '../controllers/quizController.js';
 //router object
 
 const router=express.Router();
@@ -45,5 +45,9 @@ router.post('/uploadall',student_file_controller);
 router.get('/getall',student_file_get_controller);
 
 router.get('/getallassignments',getassignmentController);
+
+// route for quizDetails
+
+router.post('/quizData',quizController);
 
 export default router;
