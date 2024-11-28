@@ -17,7 +17,7 @@ const Login = () => {
     
 
     try {
-      const res = await axios.post(`api/v1/auth/login/`, {
+      const res = await axios.get(`api/v1/auth/login/`, {
         id,
         password,
       });
