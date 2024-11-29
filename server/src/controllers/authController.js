@@ -57,6 +57,7 @@ export const registerController = async (req,res)=>{
 export const loginController = async (req,res)=>{
     try {
         const {id,password}=req.body;
+        
         //validation
         if(!id || !password){
             res.status(404).send({

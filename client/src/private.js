@@ -1,1 +1,1 @@
-export const baseUrl='https://vlabsolutions-ddva.vercel.app';
+export const baseUrl='http://localhost:7000';

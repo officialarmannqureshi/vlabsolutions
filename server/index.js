@@ -13,20 +13,22 @@ connectDB();
 
 //rest object
 const app = express();
+// app.use(cors());
+// app.use(cors({
+//   // origin: "https://vlabsolutions-frontend.vercel.app",
+//   origin: "*",
+//   methods: ["GET", "POST", "PUT"],
+// }));
+
+
+// added for deployment
 
 app.use(cors({
-  origin: "https://vlabsolutions-frontend.vercel.app",
-  methods: ["GET", "POST", "PUT"],
+  origin: "https://vlabsolutions-frontend.vercel.app", // Allow requests from your client
+  credentials: true,
+  
 }));
-// app.use(cors());
-
-//added for deployment
-// app.use(
-//   cors({
-//     origin: "*",
-//   })
-// );
-
+app.options('*', cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
@@ -42,7 +44,6 @@ const PORT = process.env.PORT || 8080;
 //run listen
 app.listen(PORT, () => {
   console.log(
-    `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan
-      .white
+    `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`
   );
 });

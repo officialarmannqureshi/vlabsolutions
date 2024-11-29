@@ -27,6 +27,7 @@ import axios from 'axios'
 function App() {
   const [formDetails, setFormDetails] = useState({});
   axios.defaults.withCredentials=true;
+  axios.defaults.baseURL = 'https://vlabsolutions-api.vercel.app/';
   return (
     <div className="App">
       

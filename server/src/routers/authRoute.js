@@ -15,7 +15,7 @@ router.post('/register',registerController);
 
 //route for JWT Authentications -LOGIN
 
-router.get('/login',loginController);
+router.post('/login',loginController);
 
 //route for create Assignments
 

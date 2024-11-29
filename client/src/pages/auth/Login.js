@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/auth";
+
 const Login = () => {
   const [id, setRollno] = useState("");
   const [password, setPassword] = useState("");
@@ -14,13 +15,10 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-
+   
     try {
-      const res = await axios.get(`api/v1/auth/login/`, {
-        id,
-        password,
-      });
+      const res = await axios.post(`api/v1/auth/login`, { id, password });
+
       if (res.data.success) {
         toast.success(res.data.message);
         setAuth({
