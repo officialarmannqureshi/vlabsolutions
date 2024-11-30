@@ -1,11 +1,20 @@
 1. Change cors
+->Server
 For deployment
 app.use(cors({
-  origin: "https://vlabsolutions-client.vercel.app/",
+  origin: "https://vlabsolutions-client.vercel.app",
   methods: ["GET", "POST", "PUT"],  // Change the semicolon to a comma here
 }));
 For local host
 app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT"],  // Change the semicolon to a comma here
+  origin: "localhost:7000",
 }));
+
+Next change the api base link in app.js
+
+->client
+app.js -> 
+ axios.defaults.withCredentials=true;
+  axios.defaults.baseURL = 'https://vlabsolutions-api.vercel.app/';
+
+

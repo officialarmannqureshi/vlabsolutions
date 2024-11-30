@@ -29,6 +29,10 @@ const formDetailsSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  topic: {
+    type: String,
+    required: true,
+  },
 });
 const quizSchema = new mongoose.Schema(
   {

@@ -58,9 +58,6 @@ export const getassignmentController = async (req, res) => {
       result: results,
     });
   } catch (error) {
-    res.status(500).send({
-      success: false,
-      message: 'Files not found',
-    });
+    console.error("Error in assignmentController:", error);
   }
 };

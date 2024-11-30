@@ -12,6 +12,7 @@ const AdminCreateQuiz = (props) => {
     TimeLimit: null,
     startTime: null,
     endTime: null,
+    topic: null,
   });
   const navigate = useNavigate();
 
@@ -25,7 +26,7 @@ const AdminCreateQuiz = (props) => {
 
   function handleSubmit() {
     console.log("Navigating to quiz...");
-    console.log(quizForm);
+
     navigate(`./quiz`);
     if (props.onFormSubmit) {
       props.onFormSubmit(quizForm);
@@ -72,7 +73,17 @@ const AdminCreateQuiz = (props) => {
               <input
                 type="text"
                 name="SubjectId"
-                placeholder="CPP"
+                placeholder="Data Structures and Algorithm"
+                onChange={handleQuizForm}
+                required
+              />
+            </div>
+            <div className="box-quiz">
+              <p className="quiz-title-p">Topic :</p>
+              <input
+                type="text"
+                name="topic"
+                placeholder="Graph"
                 onChange={handleQuizForm}
                 required
               />
@@ -99,7 +110,8 @@ const AdminCreateQuiz = (props) => {
                 onChange={handleQuizForm}
                 required
               />
-
+            </div>
+            <div className="box-quiz">
               <p className="quiz-title-p">End :</p>
               <input
                 type="datetime-local"

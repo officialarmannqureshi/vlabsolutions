@@ -1,6 +1,6 @@
 import quizModel from "../models/quizModel.js";
 
-export const quizController = async (req, res) => {
+export const createquizController = async (req, res) => {
   try {
     if (!req.body || Object.keys(req.body).length === 0) {
       return res.status(400).json({
@@ -19,12 +19,9 @@ export const quizController = async (req, res) => {
       });
     }
 
- 
-
     const existingQuiz = await quizModel.findOne({ unique_id });
-   
+
     if (existingQuiz) {
-      
       return res.status(409).json({
         success: false,
         message: "A quiz with the provided ID already exists.",
@@ -50,5 +47,26 @@ export const quizController = async (req, res) => {
       success: false,
       message: error.message || "Internal Server Error",
     });
+  }
+};
+
+export const getquizdataController = async (req, res) => {
+  try {
+    const quizData = await quizModel.find();
+
+    if (!quizData) {
+      return res.status(404).json({
+        success: false,
+        message: "No quiz data found.",
+      });
+    } else {
+      res.status(200).send({
+        success: true,
+        message: "Quiz data found.",
+        quizData,
+      });
+    }
+  } catch (error) {
+    console.error("Error in quizController:", error);
   }
 };
