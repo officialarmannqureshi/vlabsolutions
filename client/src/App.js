@@ -22,10 +22,15 @@ import AdminAllow from "./pages/Admin/AdminAllow";
 import AdminCreateQuizForm from "./pages/Admin/AdminCreateQuizForm";
 import AdminCreateQuiz from "./pages/Admin/AdminCreateQuiz";
 import AdminCreateQuizFormOutlet from "./pages/Admin/AdminCreateQuizFormOutlet";
+import AdminQuizView from "./pages/Admin/AdminQuizView";
 import Tests from "./pages/user/Tests";
 import axios from 'axios'
 function App() {
   const [formDetails, setFormDetails] = useState({});
+  //For local host
+  // axios.defaults.withCredentials=true;
+  // axios.defaults.baseURL = 'http://localhost:7000/';
+  //For Vercel deployment
   axios.defaults.withCredentials=true;
   axios.defaults.baseURL = 'https://vlabsolutions-api.vercel.app/';
   return (
@@ -48,6 +53,7 @@ function App() {
             <Route path="profile" element={<AdminDashboard />} />
             <Route path="students" element={<AdminStudent />} />
             <Route path="assignments" element={<AdminAssignments />} />
+            <Route path="quizview" element={<AdminQuizView/>}/>
             <Route path="performance" element={<AdminPerformance />} />
             <Route path="submissions" element={<AdminSubmissions />} />
           </Route>
