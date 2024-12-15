@@ -23,6 +23,7 @@ const app = express();
 
 // for development
 
+
 // app.use(cors({
 //   origin: "http://localhost:3000", // Allow requests from your client
 //   credentials: true,
