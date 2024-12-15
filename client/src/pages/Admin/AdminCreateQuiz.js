@@ -9,9 +9,10 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyCHgHPgPwUH_LJRpd-4UdI1Qa5rt-EBCK0");
+const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API);
 
 const AdminCreateQuiz = ({ formDetails }) => {
+  console.log('API Key:', process.env.REACT_APP_GEMINI_API);
   const [IsAiBoxVisible, setIsAiBoxVisible] = useState(false);
   const navigate = useNavigate();
   const unique_id = uuid();
