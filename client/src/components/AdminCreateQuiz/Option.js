@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Option = ({ QuestionId, optionIndex, setQuestions, Questions }) => {
+
+  const OptionValue = Questions[QuestionId]?.QuestionOptions[optionIndex] || "";
+  const CorrectAnswer = Questions[QuestionId]?.CorrectAnswer || "";
+  
+  
   function handleOptionInput(e) {
     e.preventDefault();
     const value = e.target.value; // Correctly access the value of the input field
@@ -18,7 +23,10 @@ const Option = ({ QuestionId, optionIndex, setQuestions, Questions }) => {
     }));
   }
 
+
+
   function handleClick(e) {
+    console.log(optionIndex);
     const activeQuestionId = e.target.getAttribute("QuestionId");
     const activeOptionIndex = e.target.getAttribute("optionIndex");
 
@@ -53,9 +61,10 @@ const Option = ({ QuestionId, optionIndex, setQuestions, Questions }) => {
         optionId={optionIndex}
         required
         placeholder="Enter the option here"
+        value={OptionValue}
       ></input>
       <div
-        className="correct-answer"
+        className={`correct-answer ${CorrectAnswer === String(optionIndex) ? "active" : ""}`}
         QuestionId={QuestionId}
         onClick={handleClick}
         optionIndex={optionIndex}

@@ -1,21 +1,44 @@
-import React from "react";
-import { FaAngleDown } from "react-icons/fa";
+import React, { useState } from "react";
 import { CiFilter } from "react-icons/ci";
 import { FaArrowUp } from "react-icons/fa";
-const SortBox = () => {
+
+const SortBox = ({ setSearchDate, data, orgData,setStatus,setSortRecent,userRole }) => {
+
+  const handleDate = (e) => {
+    const selectedDate = e.target.value; 
+    setSearchDate(selectedDate);
+  };
+
+  const handleStatus = (e)=>{
+    const selectedStatus = e.target.value; 
+    setStatus(selectedStatus);
+  }
+
+  const toggleSortRecent = () => setSortRecent((prev) => !prev);
   return (
     <div className="container-quiz-view-2">
       <div className="Status-box">
         <CiFilter />
-        <select className="select-status-quiz-view">
-          <option value="all">Status: All</option>
-          <option value="draft">Status: Draft</option>
-          <option value="published">Status: Published</option>
+        <label>Status:</label>
+        <select className="select-status-quiz-view" onChange={handleStatus}>
+          {
+            userRole? (<>
+            <option value="all">All</option>
+          <option value="draft">Draft</option>
+          <option value="published">Published</option>
+            </>):(<>
+              <option value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="submitted">Submitted</option>
+          <option value="expired">Expired</option>
+            </>)
+          }
+          
         </select>
       </div>
       <div className="line-css"></div>
       <div className="sortBy-css">
-        <label for="CreatedDate" className="CreatedDate-css">
+        <label htmlFor="CreatedDate" className="CreatedDate-css">
           Sort By: Created Date
         </label>
         <input
@@ -23,9 +46,10 @@ const SortBox = () => {
           id="CreatedDate"
           name="CreatedDate"
           placeholder="Created Date"
-        ></input>
+          onChange={handleDate}
+        />
       </div>
-      <div className="recent-sort-css">
+      <div className="recent-sort-css" onClick={toggleSortRecent}>
         <FaArrowUp className="recent-sort-css-inner" />
       </div>
     </div>

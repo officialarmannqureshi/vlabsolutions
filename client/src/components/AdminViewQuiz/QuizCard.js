@@ -15,6 +15,8 @@ const QuizCard = ({
   createdAt,
   uniqueId,
   status,
+  handleStartQuiz,
+  completed,
 }) => {
   return (
     <div>
@@ -23,18 +25,28 @@ const QuizCard = ({
           topic={topic}
           totalQuestions={totalQuestions}
           subjectId={subjectId}
-          className={'QuizCardUpper'}
+          className={"QuizCardUpper"}
           classId={className}
           status={status}
+          uniqueId={uniqueId}
+          handleStartQuiz={handleStartQuiz}
+          startTime={startTime}
+          endTime={endTime}
+          completed={completed}
         />
         <QuizCardMiddle
           scorePerQuestion={scorePerQuestion}
           timeLimit={timeLimit}
           totalQuestions={totalQuestions}
-          className={'QuizCardMiddle'}
+          className={"QuizCardMiddle"}
         />
-        <QuizCardBottom createdAt={createdAt} uniqueId={uniqueId} startTime={startTime}
-          endTime={endTime} className={'QuizCardBottom'} />
+        <QuizCardBottom
+          createdAt={createdAt}
+          uniqueId={uniqueId}
+          startTime={startTime}
+          endTime={endTime}
+          className={"QuizCardBottom"}
+        />
       </div>
     </div>
   );

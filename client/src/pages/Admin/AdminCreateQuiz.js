@@ -7,16 +7,82 @@ import { useNavigate } from "react-router";
 import { v4 as uuid } from "uuid";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API);
+
 const AdminCreateQuiz = ({ formDetails }) => {
+  console.log('API Key:', process.env.REACT_APP_GEMINI_API);
+  const [IsAiBoxVisible, setIsAiBoxVisible] = useState(false);
   const navigate = useNavigate();
   const unique_id = uuid();
+  const [inputValue, setInputValue] = useState("");
+  const [promptResponse, setPromptResponse] = useState("");
+  const { TotalQuestions, ClassName,
+    topic,SubjectId  } = formDetails;
 
-  const { TotalQuestions, ClassName } = formDetails;
-
-  // State for Questions
   const [Questions, setQuestions] = useState({});
+  /* GEMINI CONFIGURATION */
+  const getResponseForGivenPrompt = async () => {
+    try {
+      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-  // Redirect if invalid form details
+      const result = await model.generateContent(
+        `
+        I am a quiz maker bot, and I will generate quizzes in strict JSON format only.
+        Generate only ${TotalQuestions} questions.
+        Output format:
+        {
+          "questions": {
+            "1": {
+              "QuestionTitle": "Question title here",
+              "QuestionOptions": {
+                "1": "Option 1",
+                "2": "Option 2",
+                "3": "Option 3",
+                "4": "Option 4"
+              },
+              "CorrectAnswer": "Option number (e.g., 1, 2, 3, 4)"
+            }
+          },
+          "subject": "${SubjectId}",
+          "topic": "${topic}"
+        }
+
+        User input: ${inputValue}
+        Generate a JSON response based on the above format.
+        `
+      );
+
+      // Handle response
+      const response = await result.response;
+      const text = await response.text();
+
+  
+
+      try {
+        const parsedResponse = JSON.parse(text);
+        setPromptResponse(parsedResponse);
+      } catch (parseError) {
+        console.error("Failed to parse AI response as JSON:", parseError);
+        toast.error("Invalid AI response. Please try again.");
+        setPromptResponse({});
+      }
+    } catch (error) {
+      console.error("Error generating AI response:", error);
+      toast.error("Failed to generate quiz. Please try again.");
+    }
+  };
+
+  /* Update Questions State from AI Response */
+  useEffect(() => {
+    if (promptResponse?.questions) {
+      setQuestions(promptResponse.questions);
+    }
+  }, [promptResponse]);
+
+ 
+
   useEffect(() => {
     if (!TotalQuestions || !ClassName) {
       alert("Please fill in all quiz details before proceeding.");
@@ -30,7 +96,7 @@ const AdminCreateQuiz = ({ formDetails }) => {
     for (let i = 1; i <= TotalQuestions; i++) {
       quizComponents.push(
         <QuizOuter key={i} name={i}>
-          <Question setQuestions={setQuestions} QuestionId={i} />
+          <Question setQuestions={setQuestions} QuestionId={i} Questions={Questions}/>
           <Options
             setQuestions={setQuestions}
             QuestionId={i}
@@ -39,14 +105,12 @@ const AdminCreateQuiz = ({ formDetails }) => {
         </QuizOuter>
       );
     }
-
     return quizComponents;
   };
 
   // Handle Form Submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
 
     // Check if all questions are complete
     const allQuestionsComplete = Object.keys(Questions || {}).every(
@@ -71,32 +135,35 @@ const AdminCreateQuiz = ({ formDetails }) => {
     const finalQuizData = {
       questions: Questions,
       unique_id: unique_id,
+      completed: 0,
+      submissionDate: null,
       formDetails,
     };
 
     console.log("Final Quiz Data:", finalQuizData);
 
-    const sanitizedQuizData = JSON.parse(JSON.stringify(finalQuizData));
-    console.log("Sanitized Quiz Data:", sanitizedQuizData);
-    
     try {
       const res = await axios.post(`api/v1/auth/quizData/`, finalQuizData);
       if (res.data.success) {
-        toast.success(res.data.message);  
-        navigate(`/admin/create-quiz/`)
+        toast.success(res.data.message);
+        navigate(`/admin/create-quiz/`);
       } else {
-        toast.error(res.data.message);  
+        toast.error(res.data.message);
       }
     } catch (error) {
       console.error("Error during quiz submission:", error);
-      
-      
-      if (error.response && error.response.data && error.response.data.message) {
+
+      if (error.response?.data?.message) {
         toast.error(error.response.data.message);
       } else {
         toast.error("An unexpected error occurred.");
       }
     }
+  };
+
+  const handleClick = () => {
+
+    setIsAiBoxVisible(!IsAiBoxVisible);
   };
 
   return (
@@ -107,6 +174,39 @@ const AdminCreateQuiz = ({ formDetails }) => {
           Create
         </button>
       </form>
+      <div className="ai-main-container">
+        {IsAiBoxVisible && (
+          <div className="ai-box" id="aibox">
+            <div className="profile-box-ai">
+              <img
+                src="/gemini.png"
+                className="gemini-logo"
+                alt="Gemini Icon"
+              />
+              Quizbot
+            </div>
+            
+            <div className="text-box-ai">
+              <input
+                type="text"
+                name="geminiQuery"
+                placeholder="Type the quiz details here."
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+              />
+              <button
+                onClick={getResponseForGivenPrompt}
+                className="send-gemini"
+              >
+                Generate
+              </button>
+            </div>
+          </div>
+        )}
+        <div className="ai-icon">
+          <img src="/ai_icon.jpg" alt="AI Icon" onClick={handleClick} />
+        </div>
+      </div>
     </Layout>
   );
 };

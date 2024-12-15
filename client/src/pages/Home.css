@@ -10,8 +10,8 @@
     margin: 4px, 4px;
     padding: 4px;
     border: 1px solid rgb(64, 64, 64);
-    width: auto;
-    height: 280px;
+    width: 95%;
+    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     text-align: justify;  
