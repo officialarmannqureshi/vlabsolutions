@@ -168,23 +168,14 @@ const AdminCreateQuiz = ({ formDetails }) => {
 
   return (
     <Layout>
-      <form onSubmit={handleSubmit} className="create-quiz-main-container">
-        {renderQuestions()}
-        <button type="submit" className="create-quiz-btn">
-          Create
-        </button>
-      </form>
-      <div className="ai-main-container">
-        {IsAiBoxVisible && (
-          <div className="ai-box" id="aibox">
-            <div className="profile-box-ai">
-              <img
-                src="/gemini.png"
-                className="gemini-logo"
-                alt="Gemini Icon"
-              />
-              Quizbot
-            </div>
+      <div className="ai-outer-container">
+       <div className="ai-main-container">
+       
+        <div className="ai-icon">
+          <img src="/gemini.png" alt="AI Icon" onClick={handleClick} />
+        </div>
+        <div className="ai-box" id="aibox">
+            
             
             <div className="text-box-ai">
               <input
@@ -202,11 +193,15 @@ const AdminCreateQuiz = ({ formDetails }) => {
               </button>
             </div>
           </div>
-        )}
-        <div className="ai-icon">
-          <img src="/ai_icon.jpg" alt="AI Icon" onClick={handleClick} />
-        </div>
       </div>
+      <form onSubmit={handleSubmit} className="create-quiz-main-container">
+        {renderQuestions()}
+        <button type="submit" className="create-quiz-btn">
+          Create
+        </button>
+      </form>
+      </div>
+     
     </Layout>
   );
 };
