@@ -4,7 +4,7 @@ import { RequireSignIn, isAdmin} from '../middleware/authMiddleware.js';
 import {addFileController,getassignmentController } from '../controllers/assignmentController.js';
 
 import { student_file_controller,student_file_get_controller } from '../controllers/student_file_controller.js';
-import { createquizController,getquizdataController } from '../controllers/quizController.js';
+import { AttemptQuizController, createquizController,getquizdataController,getSpecificQuizController, statusQuizController, SubmitQuizController } from '../controllers/quizController.js';
 //router object
 
 const router=express.Router();
@@ -49,6 +49,9 @@ router.get('/getallassignments',RequireSignIn,getassignmentController);
 // route for quizDetails
 
 router.post('/quizData',RequireSignIn,createquizController);
-router.get('/getQuizData',RequireSignIn,isAdmin,getquizdataController);
-
+router.get('/getQuizData',RequireSignIn,getquizdataController);
+// router.get(`/quiz/:uniqueId`,RequireSignIn,getSpecificQuizController);
+router.post(`/quiz/:uniqueId`,RequireSignIn,AttemptQuizController);
+router.post(`/quiz/:uniqueId/submit`,RequireSignIn,SubmitQuizController);
+router.get(`/quiz/:uniqueId/status/:userId`, RequireSignIn, statusQuizController);
 export default router;

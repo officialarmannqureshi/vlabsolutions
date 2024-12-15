@@ -1,10 +1,10 @@
 import React from "react";
 
-const Question = ({questions}) => {
+const Question = ({questions,className}) => {
     return (
        
             
-            <div className="quizQuestionBox">
+            <div className={`quizQuestionBox ${className}`} >
                 <p>{questions}</p>
                 
             </div>

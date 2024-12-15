@@ -2,8 +2,9 @@
 ->Server
 For deployment
 app.use(cors({
-  origin: "https://vlabsolutions-client.vercel.app",
-  methods: ["GET", "POST", "PUT"],  // Change the semicolon to a comma here
+  origin: "https://vlabsolutions-frontend.vercel.app", // Allow requests from your client
+  credentials: true,
+  
 }));
 For local host
 app.use(cors({

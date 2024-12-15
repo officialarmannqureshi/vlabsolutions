@@ -1,18 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import QuizCard from "./QuizCard";
-const QuizViewBox = ({ quizData }) => {
+const QuizViewBox = ({ quizData,handleStartQuiz }) => {
   let [quizDataCount, setQuizDataCount] = useState(0);
   let [processedquizData, setProcessedQuizData] = useState([]);
   useEffect(() => {
     const updatedquizData = quizData.map((item) => ({
       ...item,
-      status: "Draft",
+      status: "General",
     }));
     setQuizDataCount(quizData.length);
     setProcessedQuizData(updatedquizData);
   }, [quizData]);
-
+  console.log(processedquizData);
   return (
     <div className="QuizViewBox-css-1">
       <div className="QuizViewBox-css-2">
@@ -28,8 +28,8 @@ const QuizViewBox = ({ quizData }) => {
             topic,
           } = item.formDetails;
 
-          const { createdAt, unique_id, status } = item;
-
+          const { createdAt, unique_id, status, completed } = item;
+          
           return (
             <QuizCard
               key={unique_id}
@@ -44,6 +44,8 @@ const QuizViewBox = ({ quizData }) => {
               createdAt={createdAt}
               uniqueId={unique_id}
               status={status}
+              handleStartQuiz={handleStartQuiz}
+              completed={completed}
              
             />
           );

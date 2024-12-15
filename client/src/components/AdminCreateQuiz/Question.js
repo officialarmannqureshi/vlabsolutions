@@ -1,7 +1,7 @@
 import React from "react";
 
-const Question = ({ setQuestions, QuestionId }) => {
-
+const Question = ({ setQuestions, QuestionId,Questions }) => {
+  const question = Questions[QuestionId]?.QuestionTitle || "";
   // Handle question input change
   function handleQuestionInput(e) {
     const { value } = e.target; // Destructure correctly
@@ -25,6 +25,7 @@ const Question = ({ setQuestions, QuestionId }) => {
         onChange={handleQuestionInput}
         required
         placeholder="Enter the Question here"
+        value={question}
       />
     </div>
   );

@@ -21,13 +21,15 @@ const app = express();
 // }));
 
 
-// added for deployment
+// for development
 
 // app.use(cors({
 //   origin: "http://localhost:3000", // Allow requests from your client
 //   credentials: true,
   
 // }));
+
+//for deployment
 
 app.use(cors({
   origin: "https://vlabsolutions-frontend.vercel.app", // Allow requests from your client

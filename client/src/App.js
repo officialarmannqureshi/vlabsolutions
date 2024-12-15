@@ -23,19 +23,20 @@ import AdminCreateQuizForm from "./pages/Admin/AdminCreateQuizForm";
 import AdminCreateQuiz from "./pages/Admin/AdminCreateQuiz";
 import AdminCreateQuizFormOutlet from "./pages/Admin/AdminCreateQuizFormOutlet";
 import AdminQuizView from "./pages/Admin/AdminQuizView";
+import QuizSubmittedPage from "./pages/user/QuizSubmittedPage"
 import Tests from "./pages/user/Tests";
-import axios from 'axios'
+import Quiz from "./pages/user/Quiz";
+import axios from "axios";
 function App() {
   const [formDetails, setFormDetails] = useState({});
   //For local host
-  // axios.defaults.withCredentials=true;
-  // axios.defaults.baseURL = 'http://localhost:7000/';
+  // axios.defaults.withCredentials = true;
+  // axios.defaults.baseURL = "http://localhost:7000/";
   //For Vercel deployment
   axios.defaults.withCredentials=true;
   axios.defaults.baseURL = 'https://vlabsolutions-api.vercel.app/';
   return (
     <div className="App">
-      
       <Routes>
         <Route path="/" element={<PrivateRoute />}>
           <Route index element={<HomePage />} />
@@ -45,7 +46,11 @@ function App() {
           <Route path="assignments" element={<Assignment />} />
           <Route path="Workspace" element={<Workspace />} />
           <Route path="*" element={<PageNotFound />} />
-          <Route path="tests" element={<Tests />} />
+          <Route path="tests" element={<Tests />}/>
+          <Route path="tests/quiz/:uniqueId" element={<Quiz />} />
+          <Route path="tests/quiz/:uniqueId/submitted" element={<QuizSubmittedPage />} />
+
+
         </Route>
 
         <Route path="/admin" element={<AdminRoute />}>
@@ -53,7 +58,7 @@ function App() {
             <Route path="profile" element={<AdminDashboard />} />
             <Route path="students" element={<AdminStudent />} />
             <Route path="assignments" element={<AdminAssignments />} />
-            <Route path="quizview" element={<AdminQuizView/>}/>
+            <Route path="quizview" element={<AdminQuizView />} />
             <Route path="performance" element={<AdminPerformance />} />
             <Route path="submissions" element={<AdminSubmissions />} />
           </Route>
