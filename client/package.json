@@ -34,7 +34,6 @@
     "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4",
     "@vercel/speed-insights": "^1.5.2",
-    "@vercel/analytics": "^1.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
