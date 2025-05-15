@@ -33,7 +33,9 @@
     "tailwindcss-animate": "^1.0.7",
     "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4",
-    "@vercel/speed-insights": "^1.5.2"
+    "@vercel/speed-insights": "^1.5.2",
+    "@vercel/analytics": "^1.5.2"
+
 
   },
   "scripts": {
